@@ -1,0 +1,24 @@
+{
+  "name": "podo-slides",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@slidev/cli": "^53.0.0",
+    "@slidev/theme-default": "latest",
+    "vue": "^3.5.33"
+  },
+  "pnpm": {
+    "overrides": {
+      "markdown-it": "14.3.3"
+    }
+  },
+  "devDependencies": {
+    "playwright-chromium": "1.63.0"
+  }
+}

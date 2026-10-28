@@ -1,0 +1,695 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/400-italic.css';
+@import '@fontsource/inter/600-italic.css';
+
+/* Data colours match the figures: root amber, leaf teal, whole plant lavender; interface in a deeper purple */
+:root {
+  --ink: #1f1d2b;
+  --ink2: #565169;
+  --ink3: #827d95;
+  --rule: #dcd7ee;
+  --rule2: #c3bbe3;
+  --tint: #e9e4fb;
+  --tint2: #d8d0f7;
+  --paper: #f4f1fd;
+  --accent: #5b4bc4;
+  --accent-deep: #43349d;
+  --lav: #7c6ce0;
+  --kicker: #6a5fbf;
+  --root: #d4893a;
+  --leaf: #16958b;
+  --whole: #9b8eec;
+  --font: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.slidev-layout {
+  font-family: var(--font);
+  color: var(--ink);
+  background: #fff;
+}
+
+/* Tabular figures only in numeric columns, so hyphens in running text are unaffected */
+.slidev-layout td.num,
+.slidev-layout th.num,
+.slidev-layout td[style*="right"],
+.slidev-layout .stat .v,
+.slidev-layout .strip b {
+  font-variant-numeric: tabular-nums;
+}
+
+.slidev-layout i,
+.slidev-layout em {
+  font-style: italic;
+}
+
+/* ---------- Content pages ---------- */
+.slidev-layout.pg {
+  padding: 26px 52px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pg-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 20px;
+  font-size: 12.5px;
+  color: var(--ink3);
+  letter-spacing: 0.02em;
+}
+
+.pg-no {
+  font-weight: 650;
+  color: var(--accent);
+}
+
+.pg-kicker {
+  color: var(--kicker);
+}
+
+.pg-kicker::before {
+  content: '·';
+  margin-right: 10px;
+  color: var(--rule2);
+}
+
+.pg-supp {
+  margin-left: auto;
+  padding: 1px 11px;
+  border: 1px solid #b2a8e8;
+  background: #eeeafc;
+  border-radius: 999px;
+  color: var(--accent-deep);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.pg-body {
+  flex: 1;
+  min-height: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.slidev-layout.pg h1 {
+  font-size: 26px;
+  line-height: 1.32;
+  font-weight: 650;
+  letter-spacing: -0.005em;
+  margin: 6px 0 12px;
+  margin-left: 0;
+  color: var(--ink);
+}
+
+.slidev-layout.pg h1 + p {
+  opacity: 1;
+  margin-top: 0;
+}
+
+.slidev-layout.pg h3 {
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--ink);
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+
+.slidev-layout.pg p {
+  margin: 0 0 8px;
+}
+
+.pg-foot {
+  height: 36px;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-top: 1px solid var(--rule);
+  font-size: 11px;
+  color: var(--ink3);
+}
+
+.pg-src b {
+  font-weight: 600;
+  color: var(--ink2);
+  margin-right: 6px;
+}
+
+.pg-mark {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.triad {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.triad i {
+  display: block;
+  width: 14px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.triad .r { background: var(--root); }
+.triad .l { background: var(--leaf); }
+.triad .w { background: var(--whole); }
+
+/* Key message */
+.core {
+  background: var(--tint);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  padding: 8px 16px 9px;
+  margin: 0 0 14px;
+  font-size: 15.5px;
+  line-height: 1.55;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* Lists */
+.slidev-layout.pg ul,
+.slidev-layout.pg ol {
+  margin: 0 0 6px;
+  padding-left: 1.15em;
+}
+
+.slidev-layout.pg ul {
+  list-style: disc;
+}
+
+.slidev-layout.pg ol {
+  list-style: decimal;
+}
+
+.slidev-layout.pg li {
+  margin: 0 0 5px;
+  padding-left: 2px;
+  line-height: 1.55;
+}
+
+.slidev-layout.pg li::marker {
+  color: var(--lav);
+}
+
+.slidev-layout.pg ol > li::marker {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Tables */
+.slidev-layout.pg table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0 0 10px;
+}
+
+.slidev-layout.pg th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 12.5px;
+  color: var(--ink2);
+  padding: 5px 8px;
+  border-bottom: 1.5px solid #ab9fe4;
+  border-top: none;
+  background: none;
+  vertical-align: bottom;
+}
+
+.slidev-layout.pg td {
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+.slidev-layout.pg tbody tr:last-child td {
+  border-bottom: 1.5px solid #ab9fe4;
+}
+
+.slidev-layout.pg tr.sum td {
+  font-weight: 600;
+  border-top: 1.5px solid var(--rule2);
+}
+
+/* Size utilities */
+.fs13 { font-size: 13px !important; }
+.fs13 li { margin-bottom: 4px !important; }
+.fs12 { font-size: 12.5px !important; line-height: 1.5 !important; }
+.fs12 li { margin-bottom: 3px !important; }
+.fs12 table, table.fs12 { font-size: 12px !important; }
+.fs12 th { font-size: 11.5px !important; }
+.tight td { padding: 3.5px 7px !important; }
+.tight th { padding: 3.5px 7px !important; }
+
+.cap {
+  font-size: 12px;
+  color: var(--ink2);
+  margin: 0 0 6px;
+  line-height: 1.45;
+}
+
+.muted { color: var(--ink2); }
+.faint { color: var(--ink3); }
+.num { text-align: right; white-space: nowrap; }
+.nw { white-space: nowrap; }
+.b { font-weight: 600; }
+
+/* Tissue swatches (colour only on the swatch; text stays ink) */
+.sw {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  margin-right: 6px;
+  vertical-align: 0;
+}
+
+.sw.r { background: var(--root); }
+.sw.l { background: var(--leaf); }
+.sw.w { background: var(--whole); }
+.sw.g { background: #c3bcdc; }
+.sw.a { background: var(--accent); }
+
+/* Direction markers */
+.dir {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.dir::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dir.r::before { background: var(--root); }
+.dir.l::before { background: var(--leaf); }
+.dir.n { font-weight: 400; color: var(--ink2); }
+.dir.n::before { background: #c3bcdc; }
+
+/* Definition and caveat boxes */
+.caveat {
+  background: var(--paper);
+  border: 1px solid var(--rule2);
+  border-radius: 6px;
+  padding: 9px 14px 6px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.caveat .lbl,
+.card .lbl {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.caveat ul { margin-bottom: 2px !important; }
+
+.card {
+  border: 1px solid var(--rule2);
+  border-radius: 8px;
+  padding: 11px 15px 8px;
+  background: #fff;
+}
+
+.card.tint {
+  background: var(--tint);
+  border-color: var(--tint2);
+}
+
+.card h3 {
+  margin-bottom: 4px !important;
+}
+
+/* Number blocks */
+.stat {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 0 9px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.stat:last-child { border-bottom: none; }
+
+.stat .v {
+  font-size: 30px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  min-width: 110px;
+  line-height: 1.1;
+}
+
+.stat .v small {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink2);
+}
+
+.stat .t {
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.45;
+}
+
+/* Figures */
+.fig {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.figbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.figcap {
+  font-size: 11.5px;
+  color: var(--ink3);
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* Evidence-level chips */
+.chip {
+  display: inline-block;
+  padding: 1px 8px;
+  margin: 2px 3px 2px 0;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.chip.hi { background: var(--accent); color: #fff; }
+.chip.mid { background: var(--tint2); color: var(--accent-deep); }
+.chip.un { background: #fff; color: var(--ink2); border: 1px dashed var(--ink3); padding: 0 7px; }
+.chip.nd { background: #eceaf3; color: var(--ink3); font-weight: 500; }
+.chip.td { background: #fff; color: var(--accent); border: 1px solid var(--accent); padding: 0 7px; }
+
+/* Numbered point cards */
+.nlist {
+  counter-reset: n;
+  display: grid;
+  gap: 10px 22px;
+}
+
+.nitem {
+  counter-increment: n;
+  position: relative;
+  padding: 9px 14px 9px 46px;
+  border: 1px solid var(--rule2);
+  border-radius: 8px;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.nitem::before {
+  content: counter(n);
+  position: absolute;
+  left: 14px;
+  top: 8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--tint2);
+  color: var(--accent-deep);
+  font-weight: 650;
+  font-size: 12.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* References */
+.refs ol {
+  columns: 2;
+  column-gap: 28px;
+  font-size: 10.6px !important;
+  line-height: 1.42 !important;
+  padding-left: 2.1em !important;
+}
+
+.refs li {
+  break-inside: avoid;
+  margin-bottom: 5px !important;
+  color: var(--ink2);
+}
+
+.refs li::marker {
+  color: var(--ink3) !important;
+  font-weight: 500 !important;
+}
+
+.refs a {
+  color: var(--ink2);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Evidence matrix */
+table.mx td {
+  vertical-align: middle;
+  padding: 7px 8px !important;
+}
+
+table.mx td:first-child {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+table.mx th {
+  white-space: nowrap;
+}
+
+/* Progress table numbering */
+.prog table { font-size: 15px !important; }
+.prog th { font-size: 13px !important; }
+.prog td { padding: 11px 10px !important; }
+
+.prog td:first-child {
+  width: 40px;
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.prog td:nth-child(2) {
+  font-weight: 600;
+  width: 38%;
+}
+
+/* Stat strip */
+.strip {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--rule2);
+  background: var(--paper);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.strip > div {
+  flex: 1;
+  padding: 7px 14px;
+  border-left: 1px solid var(--rule);
+  font-size: 12.5px;
+  color: var(--ink2);
+  line-height: 1.4;
+}
+
+.strip > div:first-child { border-left: none; }
+
+.strip b {
+  display: block;
+  font-size: 22px;
+  font-weight: 650;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+/* Pages with less content: larger type */
+.slidev-layout.pg.lg .pg-body { font-size: 16.5px; }
+.slidev-layout.pg.lg li { margin-bottom: 7px; }
+.slidev-layout.pg.lg .core { font-size: 17.5px; padding: 10px 18px 11px; margin-bottom: 18px; }
+.slidev-layout.pg.lg table { font-size: 15px; }
+.slidev-layout.pg.lg th { font-size: 13.5px; }
+.slidev-layout.pg.lg td { padding: 7px 10px; }
+.slidev-layout.pg.lg .cap { font-size: 13.5px; }
+.slidev-layout.pg.lg h3 { font-size: 17px; margin-bottom: 8px; }
+.slidev-layout.pg.lg .fs13 { font-size: 15px !important; }
+.slidev-layout.pg.lg .fs12 { font-size: 14px !important; }
+.slidev-layout.pg.lg .fs12 table { font-size: 13.5px !important; }
+.slidev-layout.pg.lg .caveat { font-size: 14.5px; }
+.slidev-layout.pg.lg .stat .t { font-size: 15px; }
+.slidev-layout.pg.lg .stat .v { font-size: 36px; }
+.slidev-layout.pg.lg .nitem { font-size: 15.5px; }
+.slidev-layout.pg.lg .card p { font-size: 15.5px; }
+.slidev-layout.pg.lg .chip { font-size: 15px; padding: 2px 10px; }
+.slidev-layout.pg.lg .strip > div { font-size: 14px; }
+.slidev-layout.pg.lg .strip b { font-size: 26px; }
+
+/* Card subtitles */
+.sub3 {
+  display: block;
+  font-size: 12px;
+  color: var(--ink2);
+  margin: -2px 0 6px;
+  line-height: 1.45;
+}
+
+.mt-cap { margin-top: 14px !important; }
+
+.c1w td:first-child,
+.c1w th:first-child {
+  width: 104px;
+}
+
+/* Discussion page */
+.nlist.disc .nitem {
+  font-size: 21px;
+  line-height: 1.5;
+  padding: 20px 26px 20px 74px;
+  border-color: var(--rule2);
+}
+
+.nlist.disc .nitem::before {
+  left: 24px;
+  top: 21px;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ---------- Figure pages (layouts/figpage.vue) ---------- */
+.slidev-layout.pg.fp {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  column-gap: 30px;
+}
+
+.slidev-layout.pg.fp.fp-r {
+  grid-template-columns: minmax(0, 1fr) var(--fp-w);
+  padding: 14px 36px 0 52px;
+}
+
+.slidev-layout.pg.fp.fp-l {
+  grid-template-columns: var(--fp-w) minmax(0, 1fr);
+  padding: 14px 52px 0 34px;
+}
+
+.fp-r .fp-main { grid-column: 1; grid-row: 1; }
+.fp-r .fp-fig { grid-column: 2; grid-row: 1; }
+.fp-l .fp-fig { grid-column: 1; grid-row: 1; }
+.fp-l .fp-main { grid-column: 2; grid-row: 1; }
+.fp .pg-foot { grid-column: 1 / -1; grid-row: 2; }
+
+.fp-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding-top: 12px;
+}
+
+.fp-fig {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fp-fig img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
+  object-fit: contain;
+  object-position: var(--fp-pos);
+}
+
+.fp-fig .figcap { flex: none; }
+
+.slidev-layout.pg.t23 h1 { font-size: 23px; line-height: 1.35; }
+
+/* Full-width figure */
+img.wide {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Appendix tables */
+.slidev-layout.pg table.appx {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.slidev-layout.pg table.appx th {
+  font-size: 11.5px;
+  padding: 4px 7px;
+}
+
+.slidev-layout.pg table.appx td {
+  padding: 3.5px 7px;
+}
+
+.slidev-layout.pg table.appx tr.grp td {
+  background: var(--tint);
+  color: var(--accent-deep);
+  font-weight: 650;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-bottom: 1px solid var(--rule2);
+}
+
+.slidev-layout.pg table.appx td:first-child {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+/* Paragraph leading: the theme default (24px) is too loose for small English text */
+.slidev-layout.pg p { line-height: 1.5; }
+.slidev-layout.pg p.cap { line-height: 1.45; }
+
+/* Extra size utilities for dense pages */
+.fs115 { font-size: 11.5px !important; line-height: 1.45 !important; }
+.fs115 table, table.fs115 { font-size: 11.5px !important; }
+.fs115 th { font-size: 11px !important; }
+.fs115 li { margin-bottom: 2px !important; }
+.fs11 { font-size: 11px !important; line-height: 1.42 !important; }
+.fs11 table, table.fs11 { font-size: 11px !important; }
+.fs11 th { font-size: 10.5px !important; }
+.fs11 li { margin-bottom: 2px !important; }
+.slidev-layout.pg.t21 h1 { font-size: 21px; line-height: 1.32; margin-bottom: 8px; }
+.core.sm { font-size: 13.5px !important; line-height: 1.45 !important; padding: 6px 14px 7px !important; margin-bottom: 10px !important; }
+.slidev-layout.pg table.appx.wrap1 td:first-child { white-space: normal; }
+.slidev-layout.pg.lg .nlist.sum .nitem { font-size: 14.8px; }
