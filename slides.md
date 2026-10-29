@@ -22,7 +22,7 @@ layout: title
 <div class="date">October 29, 2026</div>
 
 <!--
-Terms: Root = PR1–3; Leaf = PL1–3, meaning all plant parts remaining after root removal; Whole plant = P1–3.
+Terms: Root = PR1–3; Leaf = PL1–3, meaning all plant parts remaining after root removal. The three unsplit whole-plant libraries (P1–3, another sequencing run) went into the assembly and are not used in any comparison; every comparison, table and figure uses root and leaf, and the few pooled values that still include the whole plant say so on the slide.
 -->
 
 ---
@@ -44,11 +44,10 @@ source: Table 1; 5.1, Table 99
 | 2 | Identify the sources of non-plant reads | Mainly animals, plus bacteria, fungi and several algal groups; high-fragment sequences re-verified one by one for the reportable rank |
 | 3 | Proteome-wide correspondence with *Arabidopsis* | Proteome-wide correspondence table; root–leaf expression differences |
 | 4 | Targeted analyses of “unknown” sequences and the secondary cell wall | Estimated host share of “unknown” sequences; expression of preselected secondary-wall genes |
-| 5 | Whole plant in expression and source analyses | Comparisons across groups limited by sequencing batch |
 
 </div>
 
-<p class="cap mt-4">S1–S15 at the top right refer to sections of the Supplementary Data; “Source” at the bottom gives section and table numbers in the Comprehensive Experimental Record Report (the Report); [numbers] are references, listed on slides 38–40.</p>
+<p class="cap mt-4">S1–S15 at the top right refer to sections of the Supplementary Data; “Source” at the bottom gives section and table numbers in the Comprehensive Experimental Record Report (the Report); [numbers] are references, listed on slides 36–38.</p>
 
 ---
 layout: page
@@ -58,9 +57,11 @@ supp: S1
 source: 4.1.1–4.1.2, Tables 2–3; 4.2.1, Table 5
 ---
 
-# Sampling: root and leaf split from the same plants, whole plant sequenced unsplit
+# Sampling: root and leaf split from the same plants
 
-<div class="core">The whole plant has no additional sampled region; its clear difference from root and leaf is the sequencing batch.</div>
+<p class="method"><b>Method</b>Poly(A) mRNA libraries, Illumina NovaSeq X Plus PE150; raw-read QC with fastp 1.1.0, FastQC 0.12.1 and MultiQC.</p>
+
+<div class="core">Root and leaf were split from the same plants and sequenced in one run; all comparisons in these slides use these six libraries.</div>
 
 <div class="grid grid-cols-[1.42fr_1fr] gap-8 items-start">
 <div>
@@ -69,33 +70,31 @@ source: 4.1.1–4.1.2, Tables 2–3; 4.2.1, Table 5
 |---|---|---:|---|
 | <span class="nw"><span class="sw r"></span>Root <span class="faint">PR1–3</span></span> | Root part of the plant | 3 | Split from the same plants as leaf; pairing and independent sampling units to be confirmed |
 | <span class="nw"><span class="sw l"></span>Leaf <span class="faint">PL1–3</span></span> | All parts of the same plant remaining after root removal | 3 | Includes all non-root structures; not pure leaf blades |
-| <span class="nw"><span class="sw w"></span>Whole plant <span class="faint">P1–3</span></span> | Root and remaining parts sequenced together, not separated | 3 | Different sequencing batch from root and leaf |
 
 - The root–leaf test currently uses six libraries with the model ~ tissue, without same-plant pairing.
 - A paired test will follow once the PR–PL correspondence and the independent sampling units are confirmed; heatmaps group libraries by tissue and do not treat PR1–PL1 etc. as confirmed pairs.
-- All nine libraries are used for assembly, quantification, the marker expression atlas and source analysis.
+- Three unsplit whole-plant libraries (another sequencing run) went into the assembly but are not compared, because group and sequencing batch would be completely confounded [32]; the few pooled values that still include them are marked.
 
 </div>
 <div class="card tint">
-<span class="lbl">SEQUENCING BATCH AND READ FEATURES</span>
-<p class="fs13">Root and leaf were sequenced in a different run from the whole plant: root and leaf on LH01101 run 29, whole plant on LH00973 run 41.</p>
+<span class="lbl">SEQUENCING RUN AND READ FEATURES</span>
+<p class="fs13">Root and leaf were sequenced in the same run (LH01101 run 29).</p>
 <table class="tight fs12">
-<thead><tr><th></th><th class="num"><span class="sw w"></span>Whole plant</th><th class="num"><span class="sw r"></span>Root</th><th class="num"><span class="sw l"></span>Leaf</th></tr></thead>
+<thead><tr><th></th><th class="num"><span class="sw r"></span>Root</th><th class="num"><span class="sw l"></span>Leaf</th></tr></thead>
 <tbody>
-<tr><td>Mean GC</td><td class="num">49.15–49.78%</td><td class="num">47.50–48.13%</td><td class="num">44.35–45.41%</td></tr>
-<tr><td>Duplication</td><td class="num">41.48–60.87%</td><td class="num">74.80–79.25%</td><td class="num">70.71–78.43%</td></tr>
+<tr><td>Mean GC</td><td class="num">47.50–48.13%</td><td class="num">44.35–45.41%</td></tr>
+<tr><td>Duplication</td><td class="num">74.80–79.25%</td><td class="num">70.71–78.43%</td></tr>
 </tbody>
 </table>
-<p class="cap" style="margin-top:8px">Group differences in GC and duplication reflect both the composition of associated RNA and the sequencing batch; these two measures alone cannot separate the two.</p>
+<p class="cap" style="margin-top:8px">The lower GC of leaf mainly reflects a larger load of low-GC associated RNA, in leaf mostly animal rRNA such as that of Simuliidae (Report 4.2.2).</p>
 </div>
 </div>
 
 <!--
 Terms and scope:
 - "Leaf" means all plant parts remaining after root removal. It keeps the original sample name Leaf and is not finely separated leaf blade.
-- The whole plant was sequenced without separating root from the rest; it has no sampled region outside root and leaf, and it was sequenced in a different batch from root and leaf.
+- The whole plant was sequenced without separating root from the rest, in another run (LH00973 run 41). Its libraries went into the assembly and are not compared.
 - The sampling records do not yet confirm which PR library pairs with which PL library, or whether the three replicates come from three independent plants; the analysis does not pair libraries by number.
-- The gradient in mean GC between groups mainly reflects different loads of the low-GC fraction (in leaf mostly animal rRNA such as that of Simuliidae; Report 4.2.2).
 -->
 
 ---
@@ -108,18 +107,20 @@ source: 4.2.4–4.2.5, Tables 12, 14; 4.2.7, Table 17; 4.2.10, Tables 22–24; 4
 
 # Source screening: associated reads removed, plant signal stable
 
+<p class="method"><b>Method</b>Rcorrector 1.0.7 and Trimmomatic 0.39; reads labelled on a first-round assembly (DIAMOND vs NR, BLASTN vs nt) and by Kraken 2, host reads rescued; Trinity 2.15.2; BUSCO 5.8.3.</p>
+
 <div class="core">Most associated-organism reads were removed before assembly; the plant fragment share and the key expression results were not affected.</div>
 
 <div class="grid grid-cols-[1.1fr_1fr] gap-10">
 <div>
 
-<PairBars title="Non-plant fragments in the original library (same method; three libraries pooled)" a-name="Before screening" b-name="After screening" :label-width="96" :rows="[{label:'Leaf',sw:'l',a:30.95,b:1.18},{label:'Root',sw:'r',a:17.79,b:4.53},{label:'Whole plant',sw:'w',a:4.43,b:2.69}]" />
+<PairBars title="Non-plant fragments in the original library (same method; three libraries pooled)" a-name="Before screening" b-name="After screening" :label-width="96" :rows="[{label:'Leaf',sw:'l',a:30.95,b:1.18},{label:'Root',sw:'r',a:17.79,b:4.53}]" />
 
 <div class="fs13 mt-4">
 
-- Reads removed: about 18% of all clean reads in root, 31% in leaf and 4% in whole plant.
-- With the labels of the three assembly versions unified, the formal assembly gives root 3.94%, leaf 1.10% and whole plant 2.61%.
-- The plant fragment share of the original library barely changes with screening (root 65.0 / 65.1%, leaf 58.5 / 60.4%, whole plant 81.9 / 82.9%); what was removed is essentially the non-plant part.
+- Reads removed: about 18% of all clean reads in root and 31% in leaf.
+- With the labels of the three assembly versions unified, the formal assembly gives root 3.94% and leaf 1.10%.
+- The plant fragment share of the original library barely changes with screening (root 65.0 / 65.1%, leaf 58.5 / 60.4%); what was removed is essentially the non-plant part.
 
 </div>
 </div>
@@ -145,6 +146,38 @@ BUSCO 89.9% is the share of conserved genes in the test set that are found compl
 layout: figpage
 kicker: Associated sources · composition
 supp: S2
+source: 4.5.8, Table 95; Supplementary Data S2
+side: right
+figw: 700px
+---
+
+# What the non-plant RNA in the transcriptome is made of
+
+<p class="method"><b>Method</b>Salmon fragments on the first-round assembly (all clean reads); gene sources from NR / nt best hits and their common ancestor; 386 genes carrying most fragments of each group re-verified one by one; host isoforms deducted.</p>
+
+<div class="core">Non-plant fragments are 17.2% of the root and 30.5% of the leaf original library. Animals make up 62% of them in root and 95% in leaf.</div>
+
+<div class="fs13">
+
+- **Root**: besides animals (mainly Chironomidae), diatoms and other stramenopiles are 10.3% of the non-plant fragments, fungi 5.1%, bacteria 2.9% and red and green algae 2.6%; the remaining 17.0% are mainly other eukaryotes, viruses and unresolved lineages (footnote a in the figure).
+- **Leaf**: almost all non-plant RNA is animal, mainly Simuliidae (black flies, 20.8% of the leaf library).
+- Bacteria, fungi and algae (including diatoms) together are 21% of the non-plant fragments in root (3.6% of the library) and 2.3% in leaf (0.7% of the library).
+- These are shares of Poly(A) library RNA, not biomass or cell numbers; the next slide gives all thirteen major groups.
+
+</div>
+
+::fig::
+
+<img src="./figs/fig22_nonplant_pie.png" />
+
+<!--
+Right, fig22_nonplant_pie: share of each class in all non-plant fragments, root and leaf (data in fig22_nonplant_pie_data.tsv; values from Report Table 95 and Supplementary Data S2, the same values as fig05).
+"Other" is other eukaryotes, viruses, lineage unresolved, alveolates, Rhizaria, Amoebozoa and archaea. Red and green algae are merged so that the pie has six parts.
+-->
+---
+layout: figpage
+kicker: Associated sources · composition
+supp: S2
 source: 4.5.1, Table 68 (original labels); 4.5.8, Table 95; re-verified values of all major groups in Supplementary Data S2
 side: right
 figw: 540px
@@ -152,32 +185,33 @@ figw: 540px
 
 # Sources of non-plant RNA fragments
 
+<p class="method"><b>Method</b>Salmon fragments per gene on the first-round assembly (all clean reads); labels re-verified with nt and rRNA databases; host isoforms deducted.</p>
+
 <div class="core">Non-plant fragments are mainly animal; the five bacterial, fungal and algal major groups make up about 3.63% of the root original library, and most are higher in root.</div>
 
-<p class="cap">% of original library (first-round assembly, all clean reads, mean of three replicates; re-verified labels, host fragments deducted by isoform)</p>
+<p class="cap">% of original library (mean of three replicates; re-verified labels)</p>
 
 <div class="fs12 tight">
 
-| Major group | <span class="sw r"></span>Root | <span class="sw l"></span>Leaf | <span class="sw w"></span>Whole plant |
-|---|---:|---:|---:|
-| Animals (Metazoa) | 10.67 | 28.94 | 3.26 |
-| Stramenopiles (incl. diatoms) | 1.782 | 0.271 | 0.392 |
-| Fungi | 0.887 | 0.175 | 0.099 |
-| Bacteria (incl. cyanobacteria) | 0.507 | 0.073 | 0.043 |
-| Red algae ᵇ | 0.398 | 0.112 | 0.084 |
-| Green algae etc. | 0.051 | 0.062 | 0.006 |
-| Other ᵃ | 2.93 | 0.88 | 0.42 |
-| **Non-plant total** | **17.23** | **30.51** | **4.30** |
+| Major group | <span class="sw r"></span>Root | <span class="sw l"></span>Leaf |
+|---|---:|---:|
+| Animals (Metazoa) | 10.67 | 28.94 |
+| Stramenopiles (incl. diatoms) | 1.782 | 0.271 |
+| Fungi | 0.887 | 0.175 |
+| Bacteria (incl. cyanobacteria) | 0.507 | 0.073 |
+| Red algae ᵇ | 0.398 | 0.112 |
+| Green algae etc. | 0.051 | 0.062 |
+| Other ᵃ | 2.93 | 0.88 |
+| **Non-plant total** | **17.23** | **30.51** |
 
 </div>
 
-<p class="cap">ᵃ Other eukaryotes 1.42 / 0.66 / 0.34, viruses 0.49 / 0.06 / 0.02, lineage unresolved, alveolates, Rhizaria, Amoebozoa, archaea. ᵇ Includes DN7210 (slide 13). The five bacterial, fungal and algal groups together: root 3.626%, leaf 0.693%, whole plant 0.624% (archaea and other eukaryotes excluded).</p>
+<p class="cap">ᵃ Other eukaryotes 1.42 / 0.66, viruses 0.49 / 0.06, lineage unresolved, alveolates, Rhizaria, Amoebozoa, archaea. ᵇ Includes DN7210 (slide 14). The five bacterial, fungal and algal groups together: root 3.626%, leaf 0.693% (archaea and other eukaryotes excluded).</p>
 
 <div class="caveat fs115">
 <span class="lbl">DEFINITIONS</span>
 <ul>
 <li>Shares of RNA fragments in Poly(A) libraries, not cell numbers, biomass or community abundance; Poly(A) selection misses most bacterial RNA. Stramenopiles are not all diatoms.</li>
-<li>In the whole plant, the mean shares of animals, fungi, bacteria and green algae are all lower than in both root and leaf, unlike a simple weighted mixture of the two fractions in the same state; the whole plant is a different batch, and material state, pretreatment and technical effects cannot yet be separated.</li>
 </ul>
 </div>
 
@@ -186,7 +220,7 @@ figw: 540px
 <img src="./figs/fig05_group_composition.png" />
 
 <!--
-Right, fig05_group_composition: thirteen non-plant major groups × three tissues, % of original library (log scale), with host isoforms deducted.
+Right, fig05_group_composition: thirteen non-plant major groups in root and leaf, % of original library (log scale), with host isoforms deducted.
 Report Table 95 lists the three major groups changed by isoform-based deduction (Metazoa, bacteria, red algae); re-verified shares of the other major groups are in Supplementary Data S2.
 -->
 
@@ -200,30 +234,32 @@ source: 4.5.2, Tables 70–72; 4.5.8, Tables 94–95
 
 # Non-plant RNA fragments: changes across three label versions
 
-<div class="core">Changes in the totals across the three label versions are concentrated in a few high-fragment sequences (the original labels of script 84 sum to root 17.81%, leaf 30.91% and whole plant 4.42%; mean of three replicates).</div>
+<p class="method"><b>Method</b>V0 protein labels (DIAMOND vs NR) → V1 nt revision (megablast; common ancestor, identity-capped ranks) → sequence-by-sequence re-verification and isoform deduction.</p>
+
+<div class="core">Changes in the totals across the three label versions are concentrated in a few high-fragment sequences (the original labels of script 84 sum to root 17.81% and leaf 30.91%; mean of three replicates).</div>
 
 <div class="grid grid-cols-[1.1fr_1fr] gap-9">
-<div class="fs13">
+<div class="fs12">
 
 - An rRNA-like sequence first labelled fungal is a bdelloid rotifer (Philodinidae, animal), about 0.28 / 0.03% (root / leaf); script 88 moved several more fungal labels to other eukaryotes or stramenopiles (one to Bacillariophyceae). Fungi in root fell from 1.225% to 0.887%.
 - A sequence first labelled fungal is a grass (Poaceae, a non-host plant), about 0.036% in root (almost all PR3) and near 0 in leaf, and was removed from non-plant; script 88 also removed three green-alga-labelled embryophyte sequences (together root 0.001%, leaf 0.003%).
 - A sequence first labelled stramenopile and moved to red algae by script 86 (closest reference *Palmaria*, 93%) has 97–99.9% of its fragments on host plastid rRNA isoforms and is recorded as host; leaf red algae fell by about 0.11 percentage points.
-- DN7210, an 18S sequence first labelled alveolate and placed only in Eukaryota by script 86 (closest reference <i>Audouinella</i>, 90.4%), was reassigned on 2026-10-28 to red algae (Florideophyceae) from the common ancestor of named references; root 0.076%, leaf 0.067% (slide 13).
+- DN7210, an 18S sequence first labelled alveolate and placed only in Eukaryota by script 86 (closest reference <i>Audouinella</i>, 90.4%), was reassigned on 2026-10-28 to red algae (Florideophyceae) from the common ancestor of named references; root 0.076%, leaf 0.067% (slide 14).
 - A sequence first labelled other eukaryote is a mite (animal), about 0.05% in leaf.
 - Viruses, Rhizaria and Amoebozoa are unchanged; the rise in animals comes mainly from the rotifer and mite reassignments.
 
 </div>
 <div class="card">
 <span class="lbl">HOST FRAGMENTS DEDUCTED BY ISOFORM</span>
-<p class="fs13">All 275,497 isoforms of non-plant genes were compared with host organelle and nuclear rDNA references; only 5 met the host standard, one in each of 5 gene clusters. Four carry many fragments: two “bacteria” (DN61527, DN2273; slide 8), the Chironomidae 28S cluster DN2745 (slide 7) and the “red alga” cluster DN22134; the fifth is a trace sequence with a bacterial label.</p>
-<p class="cap">% of original library; the table on slide 5 shows values after deduction</p>
+<p class="fs13">All 275,497 isoforms of non-plant genes were compared with host organelle and nuclear rDNA references; only 5 met the host standard, one in each of 5 gene clusters. Four carry many fragments: two “bacteria” (DN61527, DN2273; slide 9), the Chironomidae 28S cluster DN2745 (slide 8) and the “red alga” cluster DN22134; the fifth is a trace sequence with a bacterial label.</p>
+<p class="cap">% of original library; the table on slide 6 shows values after deduction</p>
 <table class="tight">
-<thead><tr><th></th><th class="num"><span class="sw r"></span>Root</th><th class="num"><span class="sw l"></span>Leaf</th><th class="num"><span class="sw w"></span>Whole plant</th></tr></thead>
+<thead><tr><th></th><th class="num"><span class="sw r"></span>Root</th><th class="num"><span class="sw l"></span>Leaf</th></tr></thead>
 <tbody>
-<tr><td>Host-isoform fragments of the 5 clusters</td><td class="num">0.55</td><td class="num">0.40</td><td class="num">0.12</td></tr>
-<tr><td>Before deduction: non-plant total</td><td class="num">17.77</td><td class="num">30.91</td><td class="num">4.42</td></tr>
-<tr><td>Before deduction: bacteria</td><td class="num">0.635</td><td class="num">0.331</td><td class="num">0.086</td></tr>
-<tr><td>Before deduction: red algae (incl. DN7210)</td><td class="num">0.483</td><td class="num">0.220</td><td class="num">0.103</td></tr>
+<tr><td>Host-isoform fragments of the 5 clusters</td><td class="num">0.55</td><td class="num">0.40</td></tr>
+<tr><td>Before deduction: non-plant total</td><td class="num">17.77</td><td class="num">30.91</td></tr>
+<tr><td>Before deduction: bacteria</td><td class="num">0.635</td><td class="num">0.331</td></tr>
+<tr><td>Before deduction: red algae (incl. DN7210)</td><td class="num">0.483</td><td class="num">0.220</td></tr>
 </tbody>
 </table>
 </div>
@@ -240,16 +276,18 @@ figw: 620px
 
 # Animal sources at a glance
 
+<p class="method"><b>Method</b>Mitochondrial and rRNA marker genes vs nt (megablast); common ancestor of hits within 1%; ranks capped by identity (genus 97%, family 90%, order 85%).</p>
+
 <div class="core">Animals account for most non-plant fragments; this round focuses on bacteria, fungi and algae, so for animals only family-level composition is reported.</div>
 
 <p class="cap">% of original library, mean of three replicates; after nucleotide-based taxonomic revision and isoform-based deduction of host fragments</p>
 
-| Taxon | <span class="nw"><span class="sw r"></span>Root</span> | <span class="nw"><span class="sw l"></span>Leaf</span> | <span class="nw"><span class="sw w"></span>Whole plant</span> |
-|---|---:|---:|---:|
-| Simuliidae (black flies) | 0.06 | 20.84 | 0.96 |
-| Chironomidae (non-biting midges) | 6.35 | 0.30 | 0.07 |
-| Culicidae-like (not confirmed by nucleotide evidence) | 0.10 | 2.18 | 0.28 |
-| Philodinidae (bdelloid rotifers) | 0.65 | 0.07 | 0.16 |
+| Taxon | <span class="nw"><span class="sw r"></span>Root</span> | <span class="nw"><span class="sw l"></span>Leaf</span> |
+|---|---:|---:|
+| Simuliidae (black flies) | 0.06 | 20.84 |
+| Chironomidae (non-biting midges) | 6.35 | 0.30 |
+| Culicidae-like (not confirmed by nucleotide evidence) | 0.10 | 2.18 |
+| Philodinidae (bdelloid rotifers) | 0.65 | 0.07 |
 
 <div class="fs13">
 
@@ -275,7 +313,9 @@ class: t21
 
 # Bacteria: the two largest “bacterial” gene clusters are host plastid rRNA; the remaining bacterial signal is low
 
-<div class="core sm">About 40% of the original bacterial fragments over root and leaf (root about 20%, leaf about 78%) came from two rRNA-like gene clusters, which split by isoform into more than 98% host plastid rRNA. After deduction, bacteria are about 0.51% of the original library in root, 0.07% in leaf and 0.04% in whole plant. The remaining bacterial signal is low: about 40% has no assigned phylum, the sequences re-verified to family or genus are mainly cyanobacteria and β- and α-proteobacteria, and the main taxa meeting the tissue-association criterion are root-biased.</div>
+<p class="method"><b>Method</b>All isoforms vs host plastid, mitochondrial and rDNA references (host if a ≥ 97% segment covers ≥ half the isoform); per-isoform Salmon fragments in each library.</p>
+
+<div class="core sm">About 40% of the original bacterial fragments over root and leaf (root about 20%, leaf about 78%) came from two rRNA-like gene clusters, which split by isoform into more than 98% host plastid rRNA. After deduction, bacteria are about 0.51% of the original library in root and 0.07% in leaf. The remaining bacterial signal is low: about 40% has no assigned phylum, the sequences re-verified to family or genus are mainly cyanobacteria and β- and α-proteobacteria, and the main taxa meeting the tissue-association criterion are root-biased.</div>
 
 <p class="cap">86 bacterial genes were re-verified, covering 58% of the root + leaf fragments of this major group before deduction; rank proportions below use only the re-verified part as denominator. The two clusters with the most fragments:</p>
 
@@ -283,19 +323,19 @@ class: t21
 
 | Gene cluster | Host plastid isoform | Share of gene fragments |
 |---|---|---|
-| **DN61527** | i9 (471 bp), 100% identity over full length | root 98.2%, leaf 99.9%, whole plant 100% |
-| **DN2273** | i2 (476 bp), 99.2% identity, 99% coverage | root 99.3%, leaf 100%, whole plant 99.6% |
+| **DN61527** | i9 (471 bp), 100% identity over full length | root 98.2%, leaf 99.9% |
+| **DN2273** | i2 (476 bp), 99.2% identity, 99% coverage | root 99.3%, leaf 100% |
 
 </div>
 
-<p class="cap">Four lines of evidence for the two clusters, and the cause: slide 9.</p>
+<p class="cap">Four lines of evidence for the two clusters, and the cause: slide 10.</p>
 
 ::fig::
 
 <img src="./figs/fig07_isoform_split.png" />
 
 <!--
-Right, fig07_isoform_split: fragments per isoform of the two gene clusters in the nine libraries. Top: the host plastid isoform stacked with the other (non-host) isoforms; bottom: the other isoforms alone. The bacteria-like evidence comes only from the longest isoform of each cluster.
+Right, fig07_isoform_split: fragments per isoform of the two gene clusters in the three root and three leaf libraries. Top: the host plastid isoform stacked with the other (non-host) isoforms; bottom: the other isoforms alone. The bacteria-like evidence comes only from the longest isoform of each cluster.
 Note: Poly(A) library preparation misses most bacterial mRNA, so the bacterial signal here is mostly rRNA-like sequence; low-abundance taxa show only that related fragments were detected and are root-biased. The species name of the best database reference does not mean that the species is present in the material.
 -->
 
@@ -308,26 +348,28 @@ source: 4.5.1, Table 69; 4.5.8, Tables 92, 94
 
 # Bacteria: evidence and cause for the two mixed gene clusters
 
+<p class="method"><b>Method</b>nt and NCBI 16S / LSU rRNA databases (megablast, dc-megablast) and host references; per-isoform Salmon fragments.</p>
+
 <div class="grid grid-cols-2 gap-5 fs13">
 <div class="card">
 
 ### DN61527
 
-<span class="sub3">Revision table: Methylobacteriaceae (protein level of script 84 only to Pseudomonadota) · gene level root 0.059%, leaf 0.134%, whole plant 0.025%</span>
+<span class="sub3">Revision table: Methylobacteriaceae (protein level of script 84 only to Pseudomonadota) · gene level root 0.059%, leaf 0.134%</span>
 
 - **Evidence**: nt best hit *M. radiotolerans* 16S, 94.2%, full length; 16S-specific database best hit *Rubellimicrobium roseum*, 98.7%, but covering only 68%; host mitochondrion best 79%
-- **Split**: isoform i9 (471 bp) is 100% identical to the host plastid over its full length and carries root 98.2%, leaf 99.9% and whole plant 100% of the gene’s fragments
-- **Handling**: fragments of the host plastid 16S rRNA isoform are deducted from the bacterial share. The other 6 isoforms are not host and have very few fragments: root libraries 55 / 89 / 1,026 (the 1,021 in PR3 from i1), leaf 84 / 70 / 0, whole plant 0 / 12 / 4; root mean about 0.001%, single-library maximum about 0.003%. Only the longest, i2, was aligned (alphaproteobacterial 16S-like; the two databases disagree at order, no genus), and it has 17 fragments, all in PL1
+- **Split**: isoform i9 (471 bp) is 100% identical to the host plastid over its full length and carries root 98.2% and leaf 99.9% of the gene’s fragments
+- **Handling**: fragments of the host plastid 16S rRNA isoform are deducted from the bacterial share. The other 6 isoforms are not host and have very few fragments: root libraries 55 / 89 / 1,026 (the 1,021 in PR3 from i1), leaf 84 / 70 / 0; root mean about 0.001%, single-library maximum about 0.003%. Only the longest, i2, was aligned (alphaproteobacterial 16S-like; the two databases disagree at order, no genus), and it has 17 fragments, all in PL1
 
 </div>
 <div class="card">
 
 ### DN2273
 
-<span class="sub3">Original label Chamaesiphonaceae (<i>Chamaesiphon</i>-like, nt 23S 89.7%) · gene level root 0.070%, leaf 0.124%, whole plant 0.018%</span>
+<span class="sub3">Original label Chamaesiphonaceae (<i>Chamaesiphon</i>-like, nt 23S 89.7%) · gene level root 0.070%, leaf 0.124%</span>
 
 - **Evidence**: nt best hit *Chamaesiphon minutus* 23S, 89.7%, full length; LSU-specific database best hit *Geitlerinema*, 83.9%; host mitochondrion best 87.3%
-- **Split**: isoform i2 (476 bp) has 99.2% identity and 99% coverage to the host plastid and carries root 99.3%, leaf 100% and whole plant 99.6% of the gene’s fragments
+- **Split**: isoform i2 (476 bp) has 99.2% identity and 99% coverage to the host plastid and carries root 99.3% and leaf 100% of the gene’s fragments
 - **Handling**: fragments of the host plastid 23S rRNA isoform are deducted from the bacterial share. The longest non-host isoform (cyanobacterial 23S-like) reaches order (Gomontiellales) by nt, with fragments below 0.001% of the original library
 
 </div>
@@ -345,8 +387,8 @@ source: 4.5.1, Table 69; 4.5.8, Tables 92, 94
 
 <!--
 Split by isoform (alignments of script 87 and salmon fragment counts per library; Report Table 92):
-- DN61527: fragments of i9 in the three leaf libraries are 115,926 / 18,269 / 19,457; the other 6 non-host isoforms together have root 55 / 89 / 1,026, leaf 84 / 70 / 0 and whole plant 0 / 12 / 4 fragments.
-- DN2273: the other 5 non-host isoforms together have root 129 / 316 / 130 fragments, leaf 0 and whole plant 11 / 55 / 21.
+- DN61527: fragments of i9 in the three leaf libraries are 115,926 / 18,269 / 19,457; the other 6 non-host isoforms together have root 55 / 89 / 1,026 and leaf 84 / 70 / 0 fragments.
+- DN2273: the other 5 non-host isoforms together have root 129 / 316 / 130 fragments and leaf 0.
 -->
 
 ---
@@ -358,6 +400,8 @@ source: 4.5.8, Tables 91, 93; Appendix B, Table 102
 ---
 
 # Bacteria: re-verification coverage and reportable low-abundance taxa
+
+<p class="method"><b>Method</b>nt, NCBI rRNA databases and NR (DIAMOND) for each gene; common ancestor of hits within 1%, environmental sequences removed; replicate CV and root/leaf ratio.</p>
 
 <div class="grid grid-cols-[1fr_1fr] gap-9">
 <div class="fs13">
@@ -380,18 +424,18 @@ source: 4.5.8, Tables 91, 93; Appendix B, Table 102
 
 <div class="tight">
 
-| Taxon | Entries | <span class="nw"><span class="sw r"></span>Root</span> | <span class="nw"><span class="sw l"></span>Leaf</span> | <span class="nw"><span class="sw w"></span>Whole</span> |
-|---|---:|---:|---:|---:|
-| Oscillatoriaceae, *Phormidium* candidate | 1 | 0.0149 | 0.0004 | 0.0001 |
-| Oscillatoriaceae, genus undetermined | 2 | 0.0070 | 0.0001 | 0.0000 |
-| <span class="muted">Both Oscillatoriaceae rows</span> | | ~0.0219 | 0.0005 | 0.0001 |
-| Sphaerotilaceae | 5 | 0.0109 | 0.0009 | 0.0008 |
-| Hapalosiphonaceae | 1 | 0.0054 | 0.0002 | 0.0001 |
+| Taxon | Entries | <span class="nw"><span class="sw r"></span>Root</span> | <span class="nw"><span class="sw l"></span>Leaf</span> |
+|---|---:|---:|---:|
+| Oscillatoriaceae, *Phormidium* candidate | 1 | 0.0149 | 0.0004 |
+| Oscillatoriaceae, genus undetermined | 2 | 0.0070 | 0.0001 |
+| <span class="muted">Both Oscillatoriaceae rows</span> | | ~0.0219 | 0.0005 |
+| Sphaerotilaceae | 5 | 0.0109 | 0.0009 |
+| Hapalosiphonaceae | 1 | 0.0054 | 0.0002 |
 
 </div>
 
 - The other main taxa listed are below about 0.006% in root. Low-share signals of *Staphylococcus* and *Pseudomonas* are of common environmental or human origin and are not listed as stable associated taxa.
-- One Nitrospiraceae sequence was re-verified to family, with near-zero fragments; its functional clue is on slide 14.
+- One Nitrospiraceae sequence was re-verified to family, with near-zero fragments; its functional clue is on slide 15.
 
 </div>
 </div>
@@ -405,6 +449,8 @@ source: 4.5.1, Table 69; 4.5.3, Table 76; 4.5.8, Tables 91, 93; Appendix B, Tabl
 
 # Fungi: chytrid-related signal root-biased and stable; other candidates reported by rank
 
+<p class="method"><b>Method</b>Same re-verification with 18S / 28S / ITS databases; family threshold protein ≥ 80% or nucleotide ≥ 90%; replicate CV within root and within leaf.</p>
+
 <div class="core">The chytrid-related signal that reaches the family threshold is higher in root and stable across replicates within root and within leaf; in the re-verified part, about half of the fungal fragments support only the major group Fungi.</div>
 
 <div class="grid grid-cols-[1fr_1fr] gap-9">
@@ -416,16 +462,16 @@ source: 4.5.1, Table 69; 4.5.3, Table 76; 4.5.8, Tables 91, 93; Appendix B, Tabl
 
 <div class="tight fs12">
 
-| Definition | Genes ᵃ | <span class="sw r"></span>Root | <span class="sw l"></span>Leaf | <span class="sw w"></span>Whole |
-|---|---:|---:|---:|---:|
-| Sum over revision-table (V1) labels (script 87) | 2,782 | 0.261 | 0.068 | 0.007 |
-| Evidence at the family threshold (protein ≥ 80% or nucleotide ≥ 90%) | 341 | 0.075 | 0.020 | 0.003 |
+| Definition | Genes ᵃ | <span class="sw r"></span>Root | <span class="sw l"></span>Leaf |
+|---|---:|---:|---:|
+| Sum over revision-table (V1) labels (script 87) | 2,782 | 0.261 | 0.068 |
+| Evidence at the family threshold (protein ≥ 80% or nucleotide ≥ 90%) | 341 | 0.075 | 0.020 |
 
 </div>
 
-<p class="cap">ᵃ Row 1: genes with ≥ 10 fragments in any library; row 2: the most genes with ≥ 10 fragments in any one library (stability criterion). At the family threshold, replicate CV is 0.02 in root and 0.05 in leaf: tissue-associated (root-biased). None of the 23 re-verified Chytriomycetaceae-labelled sequences reached family (major group 14, class 6, order 1; 2 to other eukaryotes); the 3 that reach Chytriomycetaceae by nt had original labels Fungi (no family), Lobulomycetaceae and Aspergillaceae.</p>
+<p class="cap">ᵃ Both rows count all nine sequenced libraries, whole plant included. Row 1: genes with ≥ 10 fragments in any library; row 2: the most genes with ≥ 10 fragments in any one library (stability criterion). At the family threshold, replicate CV is 0.02 in root and 0.05 in leaf: tissue-associated (root-biased). None of the 23 re-verified Chytriomycetaceae-labelled sequences reached family (major group 14, class 6, order 1; 2 to other eukaryotes); the 3 that reach Chytriomycetaceae by nt had original labels Fungi (no family), Lobulomycetaceae and Aspergillaceae.</p>
 
-<DotStrip :width="560" :groups="[{label:'Chytriomycetaceae',sub:'341 genes ᵃ · tissue-associated (root-biased)',r:[0.07454,0.07654,0.07316],l:[0.01926,0.02119,0.01963],w:[0.00394,0.00324,0.00316]},{label:'Cladosporiaceae',sub:'148 genes ᵃ · not reproducible',r:[0.00019,0.00043,0.07679],l:[0.00062,0.00007,0.00002],w:[0.00003,0.00002,0.00001]}]" />
+<DotStrip :width="560" :groups="[{label:'Chytriomycetaceae',sub:'341 genes ᵃ · tissue-associated (root-biased)',r:[0.07454,0.07654,0.07316],l:[0.01926,0.02119,0.01963]},{label:'Cladosporiaceae',sub:'148 genes ᵃ · not reproducible',r:[0.00019,0.00043,0.07679],l:[0.00062,0.00007,0.00002]}]" />
 
 </div>
 <div class="fs13">
@@ -434,13 +480,12 @@ source: 4.5.1, Table 69; 4.5.3, Table 76; 4.5.8, Tables 91, 93; Appendix B, Tabl
 
 <div class="tight fs12">
 
-| Taxon | <span class="nw">Entries</span> | <span class="nw">Root / leaf / whole</span> | Note |
+| Taxon | <span class="nw">Entries</span> | <span class="nw">Root / leaf</span> | Note |
 |---|---:|---|---|
-| Pleomassariaceae | 1 | <span class="nw">0.035 / 0.000 / 0.000</span> | LSU-specific database |
-| *Cladosporium* | 2 | <span class="nw">0.023 / 0.000 / 0.000</span> | rRNA-specific databases; summed genus-level labels have root replicate CV 1.71, not reproducible, with the signal from a single replicate |
-| *Williopsis* (Wickerhamomycetaceae) | 1 | <span class="nw">0.017 / 0.000 / 0.001</span> | |
-| Pleosporaceae | 1 | <span class="nw">0.014 / 0.000 / 0.000</span> | Root-biased, but unstable across root replicates |
-| *Malassezia* | 1 | Whole plant only (0.001%) | Treated as a common contaminant |
+| Pleomassariaceae | 1 | <span class="nw">0.035 / 0.000</span> | LSU-specific database |
+| *Cladosporium* | 2 | <span class="nw">0.023 / 0.000</span> | rRNA-specific databases; summed genus-level labels have root replicate CV 1.71, not reproducible, with the signal from a single replicate |
+| *Williopsis* (Wickerhamomycetaceae) | 1 | <span class="nw">0.017 / 0.000</span> | |
+| Pleosporaceae | 1 | <span class="nw">0.014 / 0.000</span> | Root-biased, but unstable across root replicates |
 
 </div>
 
@@ -452,7 +497,7 @@ source: 4.5.1, Table 69; 4.5.3, Table 76; 4.5.8, Tables 91, 93; Appendix B, Tabl
 
 <!--
 The dot plot at lower left uses fig19_families_data.tsv (Report Appendix B, Table 102): Chytriomycetaceae at the family threshold (341 genes); Cladosporiaceae as the family-level sum (148 genes), a different definition from the 2 *Cladosporium* sequences in the table on the right (root 0.023%). The plot contrasts "stable across replicates" with "not reproducible".
-Note: what is stable across replicates is the RNA signal under the label, which says nothing about whether the classification is correct. *Cladosporium* and *Malassezia* appear in a single library only; *Staphylococcus* is detected in all three root libraries but at very low abundance; such common environmental or human-associated taxa are not listed as associated taxa.
+Note: what is stable across replicates is the RNA signal under the label, which says nothing about whether the classification is correct. *Cladosporium* appears in a single library only; *Staphylococcus* is detected in all three root libraries but at very low abundance; such common environmental or human-associated taxa are not listed as associated taxa.
 -->
 
 ---
@@ -464,23 +509,25 @@ source: 4.5.1, Table 69; 4.5.3, Table 76; 4.5.8, Tables 91, 93
 
 # Algae: diatoms have low-share genus candidates; most re-verified red and green algal fragments reach only broad groups
 
+<p class="method"><b>Method</b>Same re-verification with SSU / LSU databases and NR; identity-capped ranks; replicate CV and root/leaf ratio per family and genus.</p>
+
 <div class="core">Some diatom-related families and genera are stable across root replicates and root-biased; most re-verified red and green algal fragments reach only the major group or phylum, with a few family or genus candidates. The three groups together make up about 2.23% of the root original library.</div>
 
 <div class="tight c1w fs115">
 
-| Group | Re-verification coverage and ranks | Reportable taxa (% of original library, root / leaf / whole plant) | Replicate stability |
+| Group | Re-verification coverage and ranks | Reportable taxa (% of original library, root / leaf) | Replicate stability |
 |---|---|---|---|
-| **Diatoms and other stramenopiles**<br><span class="faint">root 1.78%, leaf 0.27%, whole plant 0.39%</span> | 60 genes cover 22.5% of fragments: major group 70%, order 9%, family 8%, phylum 7%, class 4%, genus 2% | Fragilariaceae: 4 entries to family (0.014 / 0.013 / 0.005), 3 to *Fragilaria* (protein ≥ 90%); *Gomphonema* (SSU-specific database), *Fragilariopsis*, Naviculaceae, Bacillariaceae and Plagiogrammaceae 1 each | Under re-verified labels, Fragilariaceae (up to 723 genes in one library; 0.074 / 0.025 / 0.047), Naviculaceae (814; 0.090 / 0.004 / 0.002), Bacillariaceae and Thalassiosiraceae are all tissue-associated (root-biased); at genus level *Fragilaria* (0.025 / 0.004 / 0.016) and *Seminavis* (0.020 / 0.001 / 0.000) are also root-biased |
+| **Diatoms and other stramenopiles**<br><span class="faint">root 1.78%, leaf 0.27%</span> | 60 genes cover 22.5% of fragments: major group 70%, order 9%, family 8%, phylum 7%, class 4%, genus 2% | Fragilariaceae: 4 entries to family (0.014 / 0.013), 3 to *Fragilaria* (protein ≥ 90%); *Gomphonema* (SSU-specific database), *Fragilariopsis*, Naviculaceae, Bacillariaceae and Plagiogrammaceae 1 each | Under re-verified labels, Fragilariaceae (up to 723 genes in one library; 0.074 / 0.025), Naviculaceae (814; 0.090 / 0.004), Bacillariaceae and Thalassiosiraceae are all tissue-associated (root-biased); at genus level *Fragilaria* (0.025 / 0.004) and *Seminavis* (0.020 / 0.001) are also root-biased |
 | **Diatom-like** | *Melosira dubia* 28S, identity 80.4%, coverage 70% | Below the order threshold (85%); recorded as a diatom-like sequence, family undetermined | — |
-| **Red algae**<br><span class="faint">root 0.40%, leaf 0.11%, whole plant 0.08%</span> | 60 genes cover 39.8% of fragments (after deducting host isoforms): major group 84%, phylum 7%, class 7%, genus 2% | The former largest entry (original stramenopile label, closest reference *Palmaria* 93%, root 0.09%, leaf 0.11%) has 97–99.9% of its fragments on host plastid rRNA isoforms and is recorded as host; its remaining red-alga-like isoforms reach only Florideophyceae, with very few fragments. *Acrochaetium* and *Audouinella* 1 each to genus (0.001 / 0.000 / 0.000). DN7210, an 18S sequence (closest reference <i>Audouinella</i>, 90.4%), was reassigned to Florideophyceae on 2026-10-28 (0.076 / 0.067 / 0.027); it is in the totals on the left but not among the 60 re-verified genes | Acrochaetiaceae: low abundance, root-biased, exploratory only |
-| **Green algae etc.**<br><span class="faint">root 0.05%, leaf 0.06%, whole plant 0.01%</span> | 60 genes cover 47.6% of fragments: phylum 49%, major group 36%, order 4%; 6% reassigned to embryophytes, 4% to other eukaryotes | *Cladophora* 1 (protein) and Dunaliellaceae 1, near-zero fragments; other re-verified fragments mainly reach only phylum or major group | No taxon entered the assessment |
+| **Red algae**<br><span class="faint">root 0.40%, leaf 0.11%</span> | 60 genes cover 39.8% of fragments (after deducting host isoforms): major group 84%, phylum 7%, class 7%, genus 2% | The former largest entry (original stramenopile label, closest reference *Palmaria* 93%, root 0.09%, leaf 0.11%) has 97–99.9% of its fragments on host plastid rRNA isoforms and is recorded as host; its remaining red-alga-like isoforms reach only Florideophyceae, with very few fragments. *Acrochaetium* and *Audouinella* 1 each to genus (0.001 / 0.000). DN7210, an 18S sequence (closest reference <i>Audouinella</i>, 90.4%), was reassigned to Florideophyceae on 2026-10-28 (0.076 / 0.067); it is in the totals on the left but not among the 60 re-verified genes | Acrochaetiaceae: low abundance, root-biased, exploratory only |
+| **Green algae etc.**<br><span class="faint">root 0.05%, leaf 0.06%</span> | 60 genes cover 47.6% of fragments: phylum 49%, major group 36%, order 4%; 6% reassigned to embryophytes, 4% to other eukaryotes | *Cladophora* 1 (protein) and Dunaliellaceae 1, near-zero fragments; other re-verified fragments mainly reach only phylum or major group | No taxon entered the assessment |
 
 </div>
 
 <p class="cap"><b>Definitions</b>: coverage is relative to all root + leaf fragments of the major group, rank percentages to the re-verified part. Family and genus candidates are the rank currently reportable, not species identification.</p>
 
 <!--
-Values of Fragilariaceae and Naviculaceae in the nine libraries are in fig19 on slide 13 (Report Appendix B, Table 102).
+Values of Fragilariaceae and Naviculaceae in the root and leaf libraries are in fig19 on slide 14 (Report Appendix B, Table 102).
 -->
 
 ---
@@ -494,14 +541,16 @@ figw: 700px
 
 # Algae: hit identities and reassignments
 
+<p class="method"><b>Method</b>Protein (DIAMOND vs NR) and nucleotide (megablast vs nt, 18S database) identities; common ancestor with and without environmental sequences.</p>
+
 <div class="fs13 pt-2">
 
-- The median protein-hit identity of all sequences under the Naviculaceae and Fragilariaceae labels is only 66% and 62%. At family level, the “re-verified labels” on slide 12 keep only sequences whose evidence reaches the family threshold (protein ≥ 80% or nucleotide ≥ 90%), so family totals are far smaller than under the original labels.
+- The median protein-hit identity of all sequences under the Naviculaceae and Fragilariaceae labels is only 66% and 62%. At family level, the “re-verified labels” on slide 13 keep only sequences whose evidence reaches the family threshold (protein ≥ 80% or nucleotide ≥ 90%), so family totals are far smaller than under the original labels.
 - One *Fragilaria crotonensis* protein hit is only 58.7% and is not used for species identification.
 - DN7210: the best hit is the red alga <i>Audouinella</i> 18S (90.4%, full length). Of the 10 hits within 1 percentage point, 9 are red algae and 1 is an environmental sequence without taxonomic information; the common ancestor computed by script 86 included it and reached only Eukaryota. Without the environmental sequence the common ancestor is Florideophyceae, and the sequence was reassigned to red algae (Florideophyceae) on 2026-10-28; identity is low, so no family or genus is assigned.
 - Reassigned in re-verification: rRNA-like sequences with 2 stramenopile labels and 1 red-alga label became Cyanophyceae; 3 sequences labelled green algae are embryophytes by nt (75.5%–85.3%) and were removed from non-plant.
 
-<p class="cap mt-cap">Left, fig19_families: bacterial, fungal and algal families in the nine libraries (dots for the three replicates, tick for the mean), in descending order of the sum of root and leaf means.</p>
+<p class="cap mt-cap">Left, fig19_families: bacterial, fungal and algal families in the root and leaf libraries (dots for the three replicates, tick for the mean), in descending order of the sum of root and leaf means.</p>
 
 </div>
 
@@ -518,7 +567,9 @@ source: 4.5.4, Tables 78–79
 
 # Bacterial functional clues: detected, but no complete pathway
 
-<div class="core">After re-verification, 29 prokaryotic function-candidate records remain, from 27 distinct genes (2 genes fall in two functional categories each). Each pathway has only single subunits or scattered steps, which do not support a complete metabolic process.</div>
+<p class="method"><b>Method</b>eggNOG-mapper 2.1.12 KO assignments mapped to KEGG modules, plus NR best-hit names; bacterial and archaeal genes only.</p>
+
+<div class="core sm">After re-verification, 29 prokaryotic function-candidate records remain, from 27 distinct genes (2 genes fall in two functional categories each). Each pathway has only single subunits or scattered steps, which do not support a complete metabolic process.</div>
 
 <div class="fs11 c1w">
 
@@ -533,7 +584,7 @@ source: 4.5.4, Tables 78–79
 
 <p class="cap">3 / 4 / 3 / 19 are entries per category (29 records); by gene they are 27, because the two monooxygenase sequences (subunit-like and Nitrospiraceae amoC-like) count under both nitrification and methane oxidation. Taxonomic and functional evidence are listed separately.</p>
 
-<div class="grid grid-cols-[1fr_1.45fr_0.85fr_1fr] gap-3 fs115">
+<div class="grid grid-cols-[1fr_1.45fr_0.85fr_1fr] gap-3 fs11">
 <div class="card">
 <span class="lbl">FRAGMENTS AND TWO DEFINITIONS</span>
 <p>Each candidate is below 0.0001% of the original library; most KOs are empty, and across seven modules KO finds only cobO. NR names are the broad definition; the two are counted separately.</p>
@@ -561,6 +612,8 @@ source: 4.3.3, Table 29
 ---
 
 # Proteome-wide correspondence with <i>Arabidopsis</i>
+
+<p class="method"><b>Method</b>Proteinortho 6.3.6 (DIAMOND; E ≤ 1e-5, identity ≥ 25%, coverage ≥ 50%); cross-check with eggNOG-mapper orthologous groups.</p>
 
 <div class="core">Many <i>P. ceratophyllum</i> proteins have <i>Arabidopsis</i> counterparts; one-to-one correspondences come from a proteome-wide first pass, and not all have been confirmed by gene trees.</div>
 
@@ -654,9 +707,11 @@ source: 4.3.5–4.3.6, Table 35
 
 # Key vegetative markers by level of homology evidence
 
+<p class="method"><b>Method</b>Pfam domain recall (HMMER 3.4) → MAFFT L-INS-i → IQ-TREE 2.4.0 (ModelFinder; 1,000 UFBoot and SH-aLRT) → species-overlap orthology; tblastn re-query for misses.</p>
+
 <div class="core">Key markers have been rechecked with gene trees [26, 27] and against the pre-screening assembly; a few relationships remain undecided.</div>
 
-<p class="cap">Only the 24 vegetative development targets of <i>Arabidopsis</i> are counted, not floral organ markers; numbers in the table are <i>Arabidopsis</i> targets, not genes of <i>P. ceratophyllum</i>. Sequences and evidence for each target: slide 34 (Appendix B).</p>
+<p class="cap">Only the 24 vegetative development targets of <i>Arabidopsis</i> are counted, not floral organ markers; numbers in the table are <i>Arabidopsis</i> targets, not genes of <i>P. ceratophyllum</i>. Sequences and evidence for each target: slide 33 (Appendix B).</p>
 
 <table class="mx">
 <thead><tr><th>Module</th><th>High confidence <span class="faint">8</span></th><th>Medium confidence <span class="faint">7</span></th><th>Undecided <span class="faint">3</span></th><th>Not detected this time <span class="faint">4</span></th><th>TDIF-class motif evidence <span class="faint">2</span></th></tr></thead>
@@ -693,6 +748,8 @@ source: 4.4.2, Tables 37–38; 4.4.3, Tables 40–41
 
 # Overall expression differences between root and leaf
 
+<p class="method"><b>Method</b>Salmon 1.10.3 → tximport → DESeq2 1.50.2 (~ tissue; BH padj < 0.05 and |log2FC| ≥ 1); GO by topGO, KEGG by hypergeometric test.</p>
+
 <div class="core">Photosynthesis-related signals stand out in leaf; root is enriched for ribosome- and translation-related transcripts.</div>
 
 <div class="grid grid-cols-2 gap-6">
@@ -712,7 +769,7 @@ source: 4.4.2, Tables 37–38; 4.4.3, Tables 40–41
 
 - In the strict main analysis, 14,010 genes entered testing [28, 29]: 2,608 are higher in root and 2,461 higher in leaf, 5,069 in total.
 - The 5,069 genes differ significantly from zero with a fold-change point estimate of at least two; in the threshold test with H0 |log2FC| ≤ 1 and H1 |log2FC| > 1, 2,466 are significant. Both definitions are reported.
-- The current model is ~ tissue, without same-plant pairing. Once the number correspondence and the independent sampling units are confirmed, the test will follow the actual pairing, and the calls on slides 19–21 and 28–29 and in comparisons involving the whole plant will be rechecked.
+- The current model is ~ tissue, without same-plant pairing. Once the number correspondence and the independent sampling units are confirmed, the test will follow the actual pairing, and the calls on slides 20–22 and 27–28 will be rechecked.
 
 </div>
 
@@ -730,6 +787,8 @@ figw: 600px
 ---
 
 # Compared with <i>Arabidopsis</i>, directions agree more strongly on the leaf side
+
+<p class="method"><b>Method</b><i>Arabidopsis</i> organ TPM from Expression Atlas E-MTAB-7978; one-sided Fisher tests and Spearman correlation on one-to-one orthologues.</p>
 
 <div class="core">Across the two species, root–leaf difference directions agree overall: strongly on the leaf side, weakly on the root side.</div>
 
@@ -761,13 +820,15 @@ kicker: Root–leaf differences · markers
 supp: S9
 source: 4.4.6, Tables 48–49; Appendix B, Table 103
 side: right
-figw: 660px
+figw: 570px
 class: t23
 ---
 
 # STM is higher in root; several developmental markers are expressed in both root and leaf
 
-<div class="core">There are clear developmental candidate signals, but expression in bulk tissue cannot show cellular location.</div>
+<p class="method"><b>Method</b>Gene-level TPM (Salmon + tximport); strict DESeq2 root vs leaf test; orthology from focused gene trees.</p>
+
+<div class="core sm">There are clear developmental candidate signals, but expression in bulk tissue cannot show cellular location.</div>
 
 <div class="tight fs12">
 
@@ -796,7 +857,7 @@ class: t23
 <img src="./figs/fig16_markers.png" />
 
 <!--
-Right, fig16_markers: log10 TPM heatmap of the vegetative modules, 26 rows (24 targets) × nine libraries, grouped by tissue; the whole plant is another sequencing batch. The library order will be adjusted once pairing is confirmed.
+Right, fig16_markers: log10 TPM heatmap of the vegetative modules, 26 rows (24 targets) × the three root and three leaf libraries, grouped by tissue. The library order will be adjusted once pairing is confirmed.
 -->
 
 ---
@@ -808,6 +869,8 @@ source: 4.4.8, Tables 53, 55–57; 4.4.9, Tables 59–60
 ---
 
 # Extended candidates: concordant and opposite directions
+
+<p class="method"><b>Method</b>Strict DE genes × one-to-one or tree orthologues × <i>Arabidopsis</i> organ-specific genes (≥ 4-fold); robustness under four atlas treatments.</p>
 
 <div class="core">The overall differences have been narrowed down to specific candidates, and the robustness of the atlas categories was checked.</div>
 
@@ -849,50 +912,6 @@ Agreement or opposition in expression direction with *Arabidopsis* is not the sa
 
 ---
 layout: page
-class: lg
-kicker: Whole plant
-supp: S11
-source: 4.1.2, Table 3; 4.4.5, Tables 44–47
----
-
-# 728 whole-plant-enriched candidates and the mixture model
-
-<div class="core">728 genes are higher in the whole plant than in both root and leaf, which a mixture of root and leaf cannot explain; the coefficients of a mixture model also do not recover root and leaf proportions.</div>
-
-<div class="grid grid-cols-[1.08fr_1fr] gap-9">
-<div class="fs13">
-
-### 728 candidates enriched in whole-plant libraries
-
-- The 728 genes have padj < 0.05 in both whole plant vs root and whole plant vs leaf, with fold-change point estimates of at least two. The whole plant has no additional sampled region, so these increases cannot be explained as a simple weighted mixture of root and leaf profiles in the same state. The whole plant is in a different batch, and the contributions of material state, pretreatment and technical differences cannot yet be separated.
-- Enriched for phenylpropanoid biosynthesis, glutathione metabolism, α-linolenic acid metabolism, calmodulin-dependent kinase activity and pectinesterase inhibitor activity; representative genes include WRKY53, WRKY41, WRKY55, AOS1, CML41, CML45, COMT1, CAD6 and the pectinesterase PECS-2.1, an overall stress-response signature (the wounding-response GO term itself is not enriched).
-
-<div class="mt-3">
-<HBar title="WRKY53: mean DESeq2 normalized counts (Report Table 47; not TPM)" :label-width="92" :bar-h="18" :rows="[{label:'Whole plant',sw:'w',v:1513,text:'1,513',color:'#9b8eec'},{label:'Root',sw:'r',v:3.6,text:'3.6',color:'#d4893a'},{label:'Leaf',sw:'l',v:0,text:'0',color:'#16958b'}]" />
-</div>
-
-</div>
-<div class="fs13">
-
-### Mixture model
-
-<div class="card tint mb-3">
-<span class="lbl">POOLED FIT</span>
-<div style="font-size:20px;font-weight:600;line-height:1.5">Whole plant ≈ 0.373 × leaf + 0.554 × root</div>
-</div>
-
-- Fitting by gene class changes the coefficients markedly, some to above 1; α+β rises from 0.35 to 1.05 with GC.
-- The whole plant and root/leaf come from different sequencing runs, so group and batch are completely confounded and no statistical model can separate them [32]; the fitted coefficients cannot be read as weight, area, cell number or RNA composition.
-
-</div>
-</div>
-
-<!--
-These genes are called whole-plant enriched-expression candidates; the whole plant has no additional sampled region, and the candidates do not correspond to any additional tissue, stem axis or transition zone. WRKY53 values are means of DESeq2 normalized counts (whole plant 1,513, root 3.6, leaf 0); the whole-plant candidate table uses normalized counts, while the marker tables use TPM.
--->
-
----
-layout: page
 kicker: Targeted re-verification · identification ranks
 supp: S6
 source: 4.5.8, Tables 91, 93
@@ -900,22 +919,24 @@ source: 4.5.8, Tables 91, 93
 
 # Identification ranks and replicate stability of bacteria, fungi and algae: sequence-by-sequence re-verification
 
-<div class="core">After taxonomic evidence was added for 386 bacterial, fungal and algal candidate genes, most re-verified fragments still support only broad groups. Of the 9 families in the main criterion, 8 are root-biased and 1 is not reproducible; no family or genus under the re-verified labels meets the predefined definition of “consistent across samples”.</div>
+<p class="method"><b>Method</b>386 genes: nt and NCBI rRNA databases (megablast, dc-megablast), NR (DIAMOND); common ancestor of hits within 1%; ranks capped by identity.</p>
+
+<div class="core sm">After taxonomic evidence was added for 386 bacterial, fungal and algal candidate genes, most re-verified fragments still support only broad groups. Of the 9 families in the main criterion, 8 are root-biased and 1 is not reproducible; no family or genus under the re-verified labels meets the predefined definition of “consistent across samples”.</div>
 
 <div class="fs11 tight c1w">
 
 | Major group | Re-verified genes; coverage of the group’s fragments (root + leaf) | Reported ranks (fragment-weighted) | Taxa reportable to family / genus | Reassigned or removed |
 |---|---|---|---|---|
-| **Bacteria** | 86; 29.6% after deducting host isoforms | major group 31%, family 26%, order 24%, genus 15% (before deduction, “genus 39%” and “order 42%” were mainly the host plastid rRNA of DN61527 and DN2273; slide 8) | Low-share family and genus candidates such as Oscillatoriaceae (*Phormidium*), Sphaerotilaceae, Hapalosiphonaceae, Polyangiaceae and Comamonadaceae; the two Oscillatoriaceae rows sum to about 0.0219% of root, and the genus-level row is not the family total | 3 reassigned (1 each to red algae, other eukaryotes and fungi); host plastid rRNA isoforms of the two gene clusters removed |
+| **Bacteria** | 86; 29.6% after deducting host isoforms | major group 31%, family 26%, order 24%, genus 15% (before deduction, “genus 39%” and “order 42%” were mainly the host plastid rRNA of DN61527 and DN2273; slide 9) | Low-share family and genus candidates such as Oscillatoriaceae (*Phormidium*), Sphaerotilaceae, Hapalosiphonaceae, Polyangiaceae and Comamonadaceae; the two Oscillatoriaceae rows sum to about 0.0219% of root, and the genus-level row is not the family total | 3 reassigned (1 each to red algae, other eukaryotes and fungi); host plastid rRNA isoforms of the two gene clusters removed |
 | **Archaea**<br><span class="faint">root 0.009%</span> | 60; 50% | major group 92% | None | 8% to other eukaryotes or fungi |
-| **Fungi** | 60; 32.5% | major group 50%, family 16%, genus 11%, class 9%, order 6% | Pleomassariaceae, *Cladosporium*, *Williopsis*, Pleosporaceae, Chytriomycetaceae (3 entries), *Malassezia* | 8% to other eukaryotes or stramenopiles |
+| **Fungi** | 60; 32.5% | major group 50%, family 16%, genus 11%, class 9%, order 6% | Pleomassariaceae, *Cladosporium*, *Williopsis*, Pleosporaceae, Chytriomycetaceae (3 entries) | 8% to other eukaryotes or stramenopiles |
 | **Stramenopiles**<br><span class="faint">diatoms etc.</span> | 60; 22.5% | major group 70%, order 9%, family 8%, phylum 7%, class 4%, genus 2% | Fragilariaceae (*Fragilaria*), *Gomphonema*, *Fragilariopsis*, Bacillariaceae, Plagiogrammaceae, Naviculaceae | 1% to cyanobacteria |
 | **Red algae** | 60; 39.8% after deduction | major group 84%, phylum 7%, class 7%, genus 2% | *Acrochaetium*, *Audouinella* | 1% to cyanobacteria; host plastid rRNA isoforms of DN22134 removed; DN7210 moved in from other eukaryotes (Florideophyceae; not among the 60) |
 | **Green algae etc.** | 60; 48% | phylum 49%, major group 36%, order 4%, genus 1%, family 1%, class 1% | *Cladophora*, Dunaliellaceae | 6% embryophytes (removed), 4% to other eukaryotes |
 
 </div>
 
-<p class="cap"><b>Denominators</b>: coverage is the share of the group’s root + leaf fragments carried by the re-verified genes; rank distributions are fragment-weighted within the re-verified part and do not mean every sequence was ranked. <b>Approach</b>: high-fragment sequences first (10–60 genes per group; for bacteria, plus key functional and flagged sequences), adding nt, rRNA-specific databases [33], NR near-score hits [34] and host references; ranks recorded with descriptive thresholds, without environmental-sample sequences; these thresholds are not species-identification standards.</p>
+<p class="cap"><b>Denominators</b>: coverage is the share of the group’s root + leaf fragments carried by the re-verified genes; rank distributions are fragment-weighted within the re-verified part and do not mean every sequence was ranked. <b>Approach</b>: high-fragment sequences first (10–60 genes per group; for bacteria, plus key functional and flagged sequences), adding nt, rRNA-specific databases [33], NR near-score hits [34] and host references; environmental-sample sequences are left out of ranking, and the descriptive rank thresholds are not species-identification standards.</p>
 
 ---
 layout: figpage
@@ -923,16 +944,18 @@ kicker: Targeted re-verification · identification ranks
 supp: S6
 source: 4.5.3, Table 73; 4.5.8, Tables 93, 95; Appendix B, Table 102
 side: right
-figw: 700px
+figw: 670px
 ---
 
 # Replicate stability and compositional distance
+
+<p class="method"><b>Method</b>Per family: entry at mean ≥ 0.01% and ≥ 3 genes; replicate CV and root/leaf ratio; Bray–Curtis distance with a permutation test.</p>
 
 <div class="fs115">
 
 - **Replicate stability** (criterion of script 84: root or leaf mean ≥ 0.01% and ≥ 3 genes detected; re-verified labels): 9 families entered the assessment. 8 are tissue-associated (root-biased; the root signal of Pleosporaceae comes almost only from PR3) and 1 is not reproducible (Cladosporiaceae); of 3 genera, *Fragilaria* and *Seminavis* are root-biased and *Cladosporium* is not reproducible. No family or genus meets the predefined condition “consistent across samples”, which does not mean root and leaf cannot each be stable: Chytriomycetaceae has root and leaf CV of 0.02 and 0.05 but a higher level in root. Abundant enough but with too few genes, not assessed: Pleomassariaceae, Wickerhamomycetaceae.
 - **Low abundance** (0.002–0.01%): the 12 families treated as exploratory only (11 bacterial, 1 red algal) are all root-biased, and Sphingomonadaceae and Paracoccaceae are unstable across root replicates. Before and after isoform-based deduction of host sequences, the lists and conclusions for the 9 assessed families and the 12 low-abundance families are unchanged; Roseobacteraceae, earlier not assessed for too few genes, falls below the entry threshold after deduction.
-- **Compositional distance**: Bray–Curtis distance of the composition within bacteria, fungi and algae (family level, after deducting host isoforms). Across root, leaf and whole plant, within-group 0.098 and between-group 0.211, permutation p = 0.004; root vs leaf only, within 0.078 and between 0.173, p = 0.10, not significant at the usual 0.05 level. The current unpaired, exchangeable 3 vs 3 design has a minimum p of 0.10; results are described with distances and replicate distributions, and the permutation design will be rechecked once the actual pairing and independence are confirmed.
+- **Compositional distance**: Bray–Curtis distance of the composition within bacteria, fungi and algae (family level, after deducting host isoforms). Root vs leaf: within-group 0.078 and between-group 0.173, permutation p = 0.10, not significant at the usual 0.05 level. The current unpaired, exchangeable 3 vs 3 design has a minimum p of 0.10; results are described with distances and replicate distributions, and the permutation design will be rechecked once the actual pairing and independence are confirmed.
 - **Overall**: most families and genera meeting the criteria are root-biased. Taxonomic resolution is limited, and the re-verified part can mostly be reported only as broad groups, which is related to Poly(A) libraries capturing mainly partial rRNA fragments and conserved proteins. The root–leaf comparison alone is currently described with effect sizes and replicate distributions.
 
 </div>
@@ -950,15 +973,17 @@ source: 4.5.7, Tables 85–90
 
 # “Unknown” sequences: host or foreign?
 
+<p class="method"><b>Method</b>dc-megablast to the <i>Cladopus</i> genome, stratified by ORF × length with sensitivity and false-positive controls; bootstrap intervals. Sampling frame and fragment weights pooled over all nine sequenced libraries (whole plant included).</p>
+
 <div class="core sm">The “unknown” analysis set is about 7.9–9.4% of retained reads. Neither of two methods with different bases supports a host majority. Stratified genome alignment estimates about 12%, all of it from the 600–1,500 bp stratum with ORF, and the estimate depends on how the false positive is taken (0 with fragment-weighted non-plant genes). The expression-profile EM point estimates are 13% with ORF and 42% without ORF (calibration shows they are biased high), with many fragments of uncertain origin.</div>
 
 <div class="grid grid-cols-[1fr_1fr] gap-9">
 <div class="fs12">
 
-- **Scope**: the formal assembly has 96,891 genes with no protein or nucleotide hit and ≥ 10 fragments, which make up root 9.4%, leaf 7.9% and whole plant 8.4% of retained reads. Stratified by ORF and length, fragments without ORF are root 63%, leaf 61% and whole plant 40% of unknown fragments; the 600–1,500 bp stratum with ORF is 48% in whole plant.
+- **Scope**: the formal assembly has 96,891 genes with no protein or nucleotide hit and ≥ 10 fragments, which make up root 9.4% and leaf 7.9% of retained reads. Stratified by ORF and length, fragments without ORF are root 63% and leaf 61% of unknown fragments.
 - **Composition**: median GC of unknown sequences is 41.0% (plant 44.7%, non-plant 42.7%); low-complexity fragments are only 0.4%, so these are not simple repeats.
 - **Alignment to the <i>Cladopus</i> genome** (a related species in the same family [35]): stratified by ORF × length, each stratum is estimated as (unknown hit rate − false positive) ÷ (sensitivity − false positive); the host is about 12.0% of unknown fragments (bootstrap 95% interval 10.7–16.1%; 12.0%, 10.7–15.6% when the no-ORF sensitivity uses plant genes without ORF).
-- **Where the 12% comes from**: all from the 600–1,500 bp stratum with ORF (hit rate 29%, sensitivity 79%, false positive 2%; about 34% of unknown fragments over the nine libraries). In the other five strata the unknown hit rate is no higher than the false positive, so they give 0, and the two non-coding controls give the same result. The false positive uses uniformly sampled non-plant genes; with fragment-weighted sampling (42% in that stratum) every stratum gives 0 (0–0.4%). The older unstratified algorithm gives 4.4% (2.8–5.8%); the difference comes mainly from stratification and the choice of false positive. Intervals reflect only sampling variation under each model.
+- **Where the 12% comes from**: all from the 600–1,500 bp stratum with ORF (hit rate 29%, sensitivity 79%, false positive 2%; about 34% of the unknown fragments pooled over the nine libraries). In the other five strata the unknown hit rate is no higher than the false positive, so they give 0, and the two non-coding controls give the same result. The false positive uses uniformly sampled non-plant genes; with fragment-weighted sampling (42% in that stratum) every stratum gives 0 (0–0.4%). The older unstratified algorithm gives 4.4% (2.8–5.8%); the difference comes mainly from stratification and the choice of false positive. Intervals reflect only sampling variation under each model.
 
 </div>
 <div>
@@ -981,32 +1006,17 @@ The two estimates rest on different premises. The genome alignment result depend
 layout: page
 kicker: Targeted re-verification · unknown sequences
 supp: S12
-source: 4.5.7, Table 90; Appendix B, Table 105
----
-
-# “Unknown” sequences: distribution of the expression profile
-
-<p class="cap" style="font-size:14.5px; color: var(--ink)"><b>Expression profile</b> (independent of sequence similarity): the median log2(whole plant / mean of root and leaf) is −0.5 for plant genes and −3.3 for annotated non-plant genes, so the two classes separate by gene. By fragment, 64% of non-plant fragments fall in the 0–0.5 bin, almost all from one gene (dc2 DN25908, a <i>Bradysia</i>-like β-tubulin, 62.6% of non-plant fragments, not depleted in the whole plant).</p>
-
-<img src="./figs/fig20_profile.png" class="wide" style="max-height: 512px" />
-
-<!--
-fig20_profile: distribution of log2(whole plant / mean of root and leaf) for plant, non-plant, unknown with ORF and unknown without ORF, by gene and by fragment; 0.5-unit bins, with values beyond ±8 counted in the first and last bins.
--->
-
----
-layout: page
-kicker: Targeted re-verification · unknown sequences
-supp: S12
 source: 4.5.7, Table 90
 ---
 
 # “Unknown” sequences: EM estimate and one-by-one check
 
+<p class="method"><b>Method</b>Two-class EM on the expression profiles of plant and non-plant genes, calibrated with simulated mixtures; the top 200 genes checked one by one.</p>
+
 <div class="grid grid-cols-[1fr_1fr] gap-9">
 <div class="fs13">
 
-<p>EM on unknown genes, using the two-dimensional expression profiles of plant and annotated non-plant genes (log2 whole plant / mean of root and leaf × log2 root / leaf; slide 26 shows one dimension); fitted by gene and summarized with fragment weighting (host-like by gene: 3% with ORF, 21% without ORF):</p>
+<p>EM on unknown genes, using the two-dimensional expression profiles of plant and annotated non-plant genes (log2 whole plant / mean of root and leaf × log2 root / leaf); fitted by gene and summarized with fragment weighting (host-like by gene: 3% with ORF, 21% without ORF):</p>
 
 <div class="tight">
 
@@ -1028,7 +1038,7 @@ source: 4.5.7, Table 90
 
 <div class="mt-5">
 
-- **One sequence checked separately**: DN26425 (1,121 bp, no ORF) alone is 1.86% of retained reads in leaf, 0.87% in whole plant and 0.05% in root, strongly leaf-biased yet not low in the whole plant. It does not align to the <i>Cladopus</i> genome, and the expression profile calls it like associated organisms (host posterior 0.037); its strand, Poly(A) site and alignment to Simuliidae mitochondrial and nuclear genomes remain to be checked.
+- **One sequence checked separately**: DN26425 (1,121 bp, no ORF) alone is 1.86% of retained reads in leaf and 0.05% in root, strongly leaf-biased. It does not align to the <i>Cladopus</i> genome, and the expression profile calls it like associated organisms (host posterior 0.037); its strand, Poly(A) site and alignment to Simuliidae mitochondrial and nuclear genomes remain to be checked.
 
 </div>
 </div>
@@ -1046,6 +1056,8 @@ class: t23
 
 # Preselected secondary-wall genes in root and leaf
 
+<p class="method"><b>Method</b>46 preselected <i>Arabidopsis</i> genes → Proteinortho correspondence (annotation-name fallback); strict DESeq2 root vs leaf test.</p>
+
 <div class="core sm">Several monolignol biosynthesis genes are higher in the non-root part; CESA4/7/8 were matched only by annotation name and are low in root and leaf overall; no clear counterparts were found for the five NAC master-switch targets.</div>
 
 <div class="fs12">
@@ -1058,8 +1070,7 @@ class: t23
 
 <p class="muted">The selected typical secondary-wall module shows no coordinated high expression so far; low TPM and the lack of clear counterparts alone cannot show whether the tissue deposits secondary walls. Whether higher leaf expression of monolignol genes also serves other phenylpropanoid products is a hypothesis to test.</p>
 
-- The whole-plant column is the highest for 18 of the 28 matched genes (PAL 404, laccase 141 TPM), in the same direction as the phenylpropanoid enrichment of the whole plant on slide 22 (COMT1 and CAD6 on slide 22 are not the same genes as COMT1 here); given differences in sequencing batch, material state and pretreatment, no tissue-specific biological increase can be inferred yet.
-- NAC master switches 0 / 5 comes from searching the correspondence and strict tables by list name. All annotations also contain a 245 bp SND1 (NAC012)-like fragment (about 4 TPM, PR1 only), so low expression is one possible reason; an SND3 (NAC010)-like gene, DN69967_c1_g1, is root-high (log2FC 2.97) but not in the correspondence table. Absence, low expression and many-to-many correspondence are not yet told apart; a NAC family tree is needed (slide 30).
+- NAC master switches 0 / 5 comes from searching the correspondence and strict tables by list name. All annotations also contain a 245 bp SND1 (NAC012)-like fragment (about 4 TPM, PR1 only), so low expression is one possible reason; an SND3 (NAC010)-like gene, DN69967_c1_g1, is root-high (log2FC 2.97) but not in the correspondence table. Absence, low expression and many-to-many correspondence are not yet told apart; a NAC family tree is needed (slide 29).
 - Basis of selection: sections 3.2 and 5.2 of the research proposal preselected pathways related to secondary-wall thickening (CesA, monolignol biosynthesis, NAC / MYB master switches). Only the expression of preselected genes is shown, to generate hypotheses; no co-expression network is computed and no regulatory relationship is inferred.
 
 </div>
@@ -1069,7 +1080,7 @@ class: t23
 <img src="./figs/fig21_secondary_wall.png" />
 
 <!--
-Left, fig21_secondary_wall: log10 TPM heatmap of 46 secondary-wall genes (44 rows after merging joint labels and listing several genes of one target separately) × nine libraries; rows without a counterpart are grey; root–leaf calls on the right ("↑ <2×" means padj < 0.05 but under 2-fold; † means matched by annotation name only). The three root and three leaf libraries are grouped by tissue, not paired by number; the whole plant is shown separately and marked as another batch.
+Left, fig21_secondary_wall: log10 TPM heatmap of 46 secondary-wall genes (44 rows after merging joint labels and listing several genes of one target separately) × the three root and three leaf libraries; rows without a counterpart are grey; root–leaf calls on the right ("↑ <2×" means padj < 0.05 but under 2-fold; † means matched by annotation name only). The three root and three leaf libraries are grouped by tissue, not paired by number.
 Note: "higher in leaf" refers to the whole non-root part relative to root and does not mean lignified leaf blades; genes below 5 TPM are not interpreted for direction.
 -->
 
@@ -1082,35 +1093,35 @@ source: 4.4.11, Table 66
 
 # Preselected secondary-wall genes: correspondence and root–leaf expression
 
-<p class="cap">Of 46 <i>Arabidopsis</i> genes, 30 have counterparts in <i>P. ceratophyllum</i>: 26 from the correspondence table and 4 by annotation name only (TPM is the mean of three replicates for root / leaf / whole plant; root–leaf calls are the strict test of script 45, requiring padj < 0.05 and at least 2-fold).</p>
+<p class="method"><b>Method</b>46 preselected <i>Arabidopsis</i> genes → Proteinortho correspondence (annotation-name fallback); strict DESeq2 root vs leaf test (script 45: padj < 0.05 and at least 2-fold). 30 of the 46 have counterparts in <i>P. ceratophyllum</i>, 26 from the correspondence table and 4 by annotation name only; TPM is the mean of three replicates (root / leaf).</p>
 
 <div class="fs11 tight">
 
 | Module | *Arabidopsis* genes | Role | Counterparts and root–leaf expression |
 |---|---|---|---|
 | **Secondary-wall cellulose synthase** | CESA4, CESA7, CESA8 | three subunits of the secondary-wall cellulose synthase complex [36] | 3 / 3 matched (by annotation name only, weaker), 3 genes: root-high 2, not significant 1; root and leaf TPM all below 5 |
-| **Primary-wall cellulose synthase (control)** | CESA1, CESA3, CESA6 | primary-wall cellulose synthesis | 3 / 3; all 4 genes under 2-fold (3 with padj < 0.05, slightly higher in leaf): CESA1 → DN19941_c0_g5 (8 / 9 / 43), CESA3 → DN19941_c0_g3 (13 / 11 / 30), CESA2/5/6/9 joint → DN9010_c0_g4 (6 / 11 / 16), DN9010_c0_g5 (7 / 10 / 20) |
-| **Accessory components** | CSI1, KOR1, COBL4 | accessory components of cellulose synthesis | 2 / 3 (no counterpart for COBL4): CSI1 → DN3365_c0_g1 (12 / 14 / 10), KOR1 → DN4474_c0_g1 (28 / 42 / 50); padj < 0.05 but both under 2-fold (slightly higher in leaf) |
-| **Monolignol biosynthesis** | PAL1–4, C4H, 4CL1–3, HCT, C3'H, CSE, CCoAOMT1, CCR1, F5H1, COMT1, CAD4, CAD5 | phenylpropanoid pathway to monolignols [37, 49] | 13 / 17, 10 genes: leaf-high 8, not significant 2. PAL1/2/4 joint → DN17_c0_g1 (29 / 84 / 404, leaf-high), C4H → DN57988_c0_g1 (5 / 70 / 32, leaf-high), 4CL3 → DN1839_c0_g1 (2 / 33 / 10, leaf-high), CSE → DN34170_c0_g1 (2 / 6 / 5, leaf-high), CCR1/2 joint → DN22401_c0_g1 (1 / 15 / 7, leaf-high); HCT → DN1840_c0_g1 (73 / 61 / 66, not significant); the other 3 leaf-high genes have root and leaf TPM below 5 |
-| **Lignin polymerization** | LAC4, LAC11, LAC17 | laccases in lignin polymerization [38] | 1 / 3 (only LAC11, under the LAC11/12/13/14/TT10 joint label): DN3493_c0_g5 (7 / 4 / 37), DN97157_c0_g1 (5 / 6 / 141); root–leaf differences both under 2-fold, clearly higher in the whole plant |
+| **Primary-wall cellulose synthase (control)** | CESA1, CESA3, CESA6 | primary-wall cellulose synthesis | 3 / 3; all 4 genes under 2-fold (3 with padj < 0.05, slightly higher in leaf): CESA1 → DN19941_c0_g5 (8 / 9), CESA3 → DN19941_c0_g3 (13 / 11), CESA2/5/6/9 joint → DN9010_c0_g4 (6 / 11), DN9010_c0_g5 (7 / 10) |
+| **Accessory components** | CSI1, KOR1, COBL4 | accessory components of cellulose synthesis | 2 / 3 (no counterpart for COBL4): CSI1 → DN3365_c0_g1 (12 / 14), KOR1 → DN4474_c0_g1 (28 / 42); padj < 0.05 but both under 2-fold (slightly higher in leaf) |
+| **Monolignol biosynthesis** | PAL1–4, C4H, 4CL1–3, HCT, C3'H, CSE, CCoAOMT1, CCR1, F5H1, COMT1, CAD4, CAD5 | phenylpropanoid pathway to monolignols [37, 49] | 13 / 17, 10 genes: leaf-high 8, not significant 2. PAL1/2/4 joint → DN17_c0_g1 (29 / 84, leaf-high), C4H → DN57988_c0_g1 (5 / 70, leaf-high), 4CL3 → DN1839_c0_g1 (2 / 33, leaf-high), CSE → DN34170_c0_g1 (2 / 6, leaf-high), CCR1/2 joint → DN22401_c0_g1 (1 / 15, leaf-high); HCT → DN1840_c0_g1 (73 / 61, not significant); the other 3 leaf-high genes have root and leaf TPM below 5 |
+| **Lignin polymerization** | LAC4, LAC11, LAC17 | laccases in lignin polymerization [38] | 1 / 3 (only LAC11, under the LAC11/12/13/14/TT10 joint label): DN3493_c0_g5 (7 / 4), DN97157_c0_g1 (5 / 6); root–leaf differences both under 2-fold |
 | **NAC master switches** | NST1, NST2, SND1 (NST3), VND6, VND7 | master transcription factors for fiber and vessel secondary walls [39–41] | 0 / 5: the name fallback in the correspondence and strict tables found none; across all annotations there is an SND1 (NAC012)-like short fragment, DN412705_c0_g1 (245 bp, low expression) |
 | **MYB second-level switches** | MYB46, MYB83 | direct downstream targets of the NAC master switches; redundantly regulate secondary-wall synthesis [42] | 1 / 2, 1 gene, too low to enter testing |
-| **MYB downstream and others** | MYB58, MYB63, MYB85, MYB103, KNAT7, SND2, SND3 | downstream members of the secondary-wall regulatory network [38, 43] | SND2/3 2 / 2, 1 gene not significant (TPM &lt; 5); an SND3 (NAC010)-like gene of the same cluster, DN69967_c1_g1, is root-high (log2FC 2.97) and not in the correspondence table. MYB downstream 2 / 5: KNAT7 → DN4839_c0_g1 (10 / 10 / 12) under 2-fold (padj 0.021), MYB58 not significant (TPM &lt; 5) |
-| **Xylan synthesis (reference)** | IRX9, IRX10, IRX14 | secondary-wall xylan synthesis | 3 / 3: IRX10/IRX10L → DN309442_c0_g1 (25 / 23 / 22, not significant), IRX14 → DN404525_c0_g1 (8 / 15 / 12, leaf-high; by annotation name only), IRX9 not significant (TPM &lt; 5) |
+| **MYB downstream and others** | MYB58, MYB63, MYB85, MYB103, KNAT7, SND2, SND3 | downstream members of the secondary-wall regulatory network [38, 43] | SND2/3 2 / 2, 1 gene not significant (TPM &lt; 5); an SND3 (NAC010)-like gene of the same cluster, DN69967_c1_g1, is root-high (log2FC 2.97) and not in the correspondence table. MYB downstream 2 / 5: KNAT7 → DN4839_c0_g1 (10 / 10) under 2-fold (padj 0.021), MYB58 not significant (TPM &lt; 5) |
+| **Xylan synthesis (reference)** | IRX9, IRX10, IRX14 | secondary-wall xylan synthesis | 3 / 3: IRX10/IRX10L → DN309442_c0_g1 (25 / 23, not significant), IRX14 → DN404525_c0_g1 (8 / 15, leaf-high; by annotation name only), IRX9 not significant (TPM &lt; 5) |
 
 </div>
 
-<p class="cap">The locus IDs of the 46 <i>Arabidopsis</i> genes were checked one by one. Counterparts in <i>P. ceratophyllum</i> are taken from the proteome-wide correspondence table (CESA4/7/8 and IRX14 by annotation-name fallback only); joint labels are kept, and one gene can appear in several rows. “No counterpart” means not found by list name in the correspondence and strict tables; across all annotations there are low-expression sequences with the same names as COBL4, 4CL1, F5H1 and LAC4. In the atlas table, MYB103 and MYB63 appear as AtMYB103 and ATMYB63; these are aliases with the same locus IDs.</p>
+<p class="cap">The locus IDs of the 46 <i>Arabidopsis</i> genes were checked one by one. CESA4/7/8 and IRX14 were matched by annotation name only; joint labels are kept, and one gene can appear in several rows. “No counterpart” means not found by list name in the correspondence and strict tables; across all annotations there are low-expression sequences with the same names as COBL4, 4CL1, F5H1 and LAC4. In the atlas table, MYB103 and MYB63 appear as AtMYB103 and ATMYB63; these are aliases with the same locus IDs.</p>
 
 ---
 layout: page
 class: lg
 kicker: Open items
 supp: S14
-source: 4.1.2, Table 3; 4.3.3, Table 29; 4.3.6, Table 35; 4.4.8; 4.4.11; 4.5.7, Table 90; 5.1
+source: 4.1.2, Table 3; 4.3.3, Table 29; 4.3.5–4.3.6, Tables 32, 35; 4.4.8; 4.4.11; 4.5.7, Table 90; 5.1
 ---
 
-# Open items: paired test, batch records and a few homology relationships
+# Open items: paired test, family trees and a few homology relationships
 
 <div class="core">The remaining questions involve targeted computation and existing records, and some are limited by the data design.</div>
 
@@ -1119,10 +1130,10 @@ source: 4.1.2, Table 3; 4.3.3, Table 29; 4.3.6, Table 35; 4.4.8; 4.4.11; 4.5.7, 
 | Question | Next computation or check | Effect on current conclusions |
 |---|---|---|
 | **Root–leaf pairing and independence** | Confirm the actual correspondence of PR1–3 and PL1–3 and whether they come from three independent plants; then update the model with the actual pairing | Recheck DE gene counts, enrichment, marker expression, secondary-wall calls and extended candidates; recheck the permutation design |
-| **Whole-plant differences beyond batch** | Records of collection, washing, freezing, RNA extraction and library preparation | Decides how far whole-plant differences can be interpreted; complete confounding cannot be removed by statistical correction |
+| **Nine-species family trees** | Trees for the 14 marker groups with the seven species plus *Hypericum perforatum* (Hypericaceae, sister family of Podostemaceae) and tomato, e.g. STM with KNAT1/2/6 as the KNOX family | Places *P. ceratophyllum* sequences next to orthologues of the closest sampled relative; shows whether a duplication predates or follows the split from Hypericaceae |
 | **Correspondence of a few extended candidates** | Family trees, ORFs, domains, coverage and eggNOG conflicts for SAUR55 and others | Decides whether specific gene names and functional interpretations can be used |
 | **Homology resolution of key markers** | FIL and PLT1/2 undecided; YAB3 with one-sided support; KNAT2/6 and HB8 with joint labels | Add evidence only for relationships that affect key interpretations |
-| **NAC master switches of the secondary wall** | NAC family tree to confirm whether *P. ceratophyllum* has members of the NST / SND / VND clades | Decides whether “no counterpart found” on slide 28 can be written as “not detected” |
+| **NAC master switches of the secondary wall** | NAC family tree to confirm whether *P. ceratophyllum* has members of the NST / SND / VND clades | Decides whether “no counterpart found” on slide 27 can be written as “not detected” |
 | **The largest unknown sequence** | Strand and Poly(A) site of DN26425, and alignment to Simuliidae genomes | Alone it is 1.9% of retained reads in leaf and needs a separate explanation |
 
 </div>
@@ -1146,7 +1157,6 @@ source: 5.1, Table 99
 <div class="nitem mb-3" style="break-inside: avoid">Broad gene correspondence with <i>Arabidopsis</i> has been established; agreement in direction is stronger on the leaf side, and a few developmental candidates and opposite-direction candidates merit focused interpretation.</div>
 <div class="nitem mb-3" style="break-inside: avoid">The “unknown” analysis set is about 7.9–9.4% of retained reads. Stratified genome alignment estimates the host at about 12% (10.7–16.1%), all from the 600–1,500 bp stratum with ORF, and 0 with a fragment-weighted false positive. The expression profile is a different basis, its results differ with and without ORF and include many uncertain fragments; the two methods are not validation with independent samples.</div>
 <div class="nitem mb-3" style="break-inside: avoid">Preselected secondary-wall genes: the upstream monolignol pathway is higher in the non-root part, secondary-wall CESAs are low, and no counterparts of the NAC master switches were found; description and hypothesis only.</div>
-<div class="nitem mb-3" style="break-inside: avoid">The whole plant takes part in several analyses; its expression and associated composition do not fit a simple mixture of root and leaf in the same state, and it should be used together with batch and material records.</div>
 </div>
 
 ---
@@ -1160,7 +1170,6 @@ supp: S14
 <div class="nlist disc mt-8" style="display:grid; grid-template-columns: 1fr; gap: 14px">
 <div class="nitem">Which bacterial, fungal and algal sequences, competing hits and reference databases to prioritize, and which specific family or genus candidates still need fuller computational taxonomic evidence.</div>
 <div class="nitem">Which extended candidates need family-tree confirmation before entering the main results.</div>
-<div class="nitem">How far the records of collection, processing and library preparation for the whole plant can be completed.</div>
 <div class="nitem">Whether the secondary-wall expression pattern can support the hypothesis in the proposal, or should stay descriptive.</div>
 </div>
 
@@ -1178,8 +1187,8 @@ source: 4.2.5, Table 14; 4.2.7, Tables 17–18; 4.2.10, Table 23; 4.4.1–4.4.2,
 
 | Item | Definition |
 |---|---|
-| **Original library** | All clean reads of the nine libraries after cleaning (before source screening); the denominator of associated-source shares |
-| **Retained library** | Reads entering dc2 assembly and quantification after two rounds of source screening (including supplementary screening with Kraken 2); retained shares are root 82.09%, leaf 68.73% and whole plant 95.64% |
+| **Original library** | All clean reads of each library after cleaning (before source screening); the denominator of associated-source shares |
+| **Retained library** | Reads entering dc2 assembly and quantification after two rounds of source screening (including supplementary screening with Kraken 2); retained shares are root 82.09% and leaf 68.73% |
 | **Mapped fragments** | Fragments assigned to transcripts by Salmon; unmapped fragments are listed separately |
 | **Gene sets** | strict: the 23,969 genes with the protein-level plant label of script 44 (main analysis); plant: nonplant excluded, ambiguous and no-hit kept, 198,739; all: all 211,391 |
 | **Read sets** | A: screened reads (main analysis); B: all clean reads; C: screened reads plus first-round ambiguous reads |
@@ -1192,7 +1201,7 @@ source: 4.2.5, Table 14; 4.2.7, Tables 17–18; 4.2.10, Table 23; 4.4.1–4.4.2,
 ### Assembly and quantification quality
 
 <div class="stat"><span class="v">89.9%</span><span class="t">BUSCO completeness of dc2 unigenes (embryophyta_odb10, n = 1,614; all isoforms 91.4%) [3]</span></div>
-<div class="stat"><span class="v">97.92%</span><span class="t">mean mapping rate over the nine libraries (first 2 million pairs of assembly input reads per library, Bowtie2 end-to-end; 89.68% for all clean reads by the same method)</span></div>
+<div class="stat"><span class="v">≥ 95.8%</span><span class="t">mapping rate in every root and leaf library: root 95.8–95.9%, leaf 98.8–99.0% (first 2 million pairs of assembly input reads per library, Bowtie2 end-to-end)</span></div>
 <div class="stat"><span class="v">43,013</span><span class="t">dc2 transcripts carrying 90% of expression (127,989 in the pre-screening assembly)</span></div>
 
 - Assembly: Trinity [44, 45]; supplementary read screening: Kraken 2 [46]; quantification: Salmon [29]; differential expression: DESeq2 [28]; sequence alignment and classification: BLAST+ [47], DIAMOND [34], NCBI Taxonomy [48].
@@ -1273,6 +1282,8 @@ source: 4.4.10, Table 64; 4.5.2, Table 71; 4.5.4, Table 79; 4.5.5, Table 81; 4.5
 
 # Appendix C&nbsp;&nbsp;Sequence-level evidence for associated sources
 
+<p class="method"><b>Method</b>Per-sequence evidence from nt, NCBI rRNA databases and NR; common ancestor of hits within 1%.</p>
+
 <p class="cap">IDs are from the first-round assembly (norm) unless marked dc2; identity and coverage are best-hit values. Reported ranks are descriptive upper limits, not species identification.</p>
 
 <table class="appx tight fs11">
@@ -1281,7 +1292,7 @@ source: 4.4.10, Table 64; 4.5.2, Table 71; 4.5.4, Table 79; 4.5.5, Table 81; 4.5
 <tr><td>DN61527_c0_g1</td><td>Bacteria</td><td>nt <i>Methylobacterium radiotolerans</i> 16S 94.2% (full length); 16S database <i>Rubellimicrobium roseum</i> 98.7% (coverage 68%); host mitochondrion 79%; i9 100% identical to host plastid, full length</td><td>Host plastid 16S rRNA; the longest non-host isoform reaches only Alphaproteobacteria</td></tr>
 <tr><td>DN2273_c0_g1</td><td>Bacteria</td><td>nt <i>Chamaesiphon minutus</i> 23S 89.7% (full length); LSU database <i>Geitlerinema</i> 83.9%; host mitochondrion 87.3%; i2 99.2% to the host plastid (coverage 99%)</td><td>Host plastid 23S rRNA; the longest non-host isoform reaches order (Gomontiellales)</td></tr>
 <tr><td>DN22134_c0_g2</td><td>Stramenopiles → red algae (script 86)</td><td>nt <i>Palmaria decipiens</i> 93.0% (full length); 97–99.9% of fragments on host plastid rRNA isoforms</td><td>Recorded as host; the remaining red-alga-like isoforms reach Florideophyceae</td></tr>
-<tr><td>DN2745_c0_g1</td><td><i>Culex</i> → Chironomidae (script 86)</td><td>nt <i>Heterotrissocladius</i> 28S 92.0% (coverage 0.94); fragments on the host nuclear 28S rDNA isoform: root 96.5%, leaf 73.3%, whole plant 94.3%</td><td>Mixed cluster of Chironomidae 28S and host nuclear rDNA</td></tr>
+<tr><td>DN2745_c0_g1</td><td><i>Culex</i> → Chironomidae (script 86)</td><td>nt <i>Heterotrissocladius</i> 28S 92.0% (coverage 0.94); fragments on the host nuclear 28S rDNA isoform: root 96.5%, leaf 73.3%</td><td>Mixed cluster of Chironomidae 28S and host nuclear rDNA</td></tr>
 <tr><td>DN586224</td><td>Bacteria</td><td>family by script 88; NR best hit bacterial ammonia monooxygenase subunit AmoC, 100%; amoA, amoB, hao, nxrA, nxrB not detected</td><td>Nitrospiraceae (family)</td></tr>
 <tr><td>DN1834_c0_g1</td><td>Stramenopiles</td><td><i>Melosira dubia</i> 28S 80.4% (coverage 0.70)</td><td>Diatom-like; below the order threshold, family undetermined</td></tr>
 <tr><td>DN7210_c0_g1</td><td><i>Cryptosporidium</i> (protein level) → other eukaryotes (script 86)</td><td>nt best hit <i>Audouinella hermannii</i> (red alga) 18S 90.4% (full length); of 10 hits within 1%, 9 are red algae and 1 an environmental sequence without taxonomic information; without it the common ancestor is Florideophyceae</td><td>Red algae (Florideophyceae), reassigned on 2026-10-28</td></tr>
@@ -1297,76 +1308,6 @@ source: 4.4.10, Table 64; 4.5.2, Table 71; 4.5.4, Table 79; 4.5.5, Table 81; 4.5
 
 ---
 layout: page
-kicker: Appendix D · Whole-plant fit and batch
-supp: S11
-source: 4.1.2, Table 3; 4.2.1, Table 5; 4.4.5, Tables 44–46
----
-
-# Appendix D&nbsp;&nbsp;Whole-plant fit and batch
-
-<div class="grid grid-cols-2 gap-7">
-<div class="fs12">
-
-### Mixture fit W ≈ α·L + β·R
-
-<table class="appx tight">
-<thead><tr><th>Library</th><th class="num">α (leaf)</th><th class="num">β (root)</th><th class="num">α+β</th><th class="num">r (log)</th><th class="num">Median log2 obs. / pred.</th></tr></thead>
-<tbody>
-<tr><td>P1</td><td class="num">0.3956</td><td class="num">0.5322</td><td class="num">0.9278</td><td class="num">0.9004</td><td class="num">−0.0689</td></tr>
-<tr><td>P2</td><td class="num">0.3627</td><td class="num">0.5596</td><td class="num">0.9222</td><td class="num">0.8931</td><td class="num">−0.0770</td></tr>
-<tr><td>P3</td><td class="num">0.3569</td><td class="num">0.5633</td><td class="num">0.9202</td><td class="num">0.8852</td><td class="num">−0.0802</td></tr>
-<tr class="sum"><td>Three pooled</td><td class="num">0.3730</td><td class="num">0.5538</td><td class="num">0.9268</td><td class="num">0.8993</td><td class="num">−0.0744</td></tr>
-</tbody>
-</table>
-
-### Binned fits
-
-<table class="appx tight">
-<thead><tr><th>Bin</th><th class="num">α</th><th class="num">β</th><th class="num">α+β</th><th class="num">Median whole-plant residual</th></tr></thead>
-<tbody>
-<tr><td>GC &lt; 34%</td><td class="num">0.3383</td><td class="num">0.0112</td><td class="num">0.3496</td><td class="num">−1.238</td></tr>
-<tr><td>GC 34–38%</td><td class="num">0.2129</td><td class="num">0.4173</td><td class="num">0.6302</td><td class="num">−0.652</td></tr>
-<tr><td>GC 38–41%</td><td class="num">0.2888</td><td class="num">0.5398</td><td class="num">0.8286</td><td class="num">−0.236</td></tr>
-<tr><td>GC 41–44%</td><td class="num">0.3419</td><td class="num">0.5636</td><td class="num">0.9055</td><td class="num">−0.076</td></tr>
-<tr><td>GC 44–47%</td><td class="num">0.4206</td><td class="num">0.5724</td><td class="num">0.9930</td><td class="num">0.051</td></tr>
-<tr><td>GC ≥ 47%</td><td class="num">0.5095</td><td class="num">0.5372</td><td class="num">1.0467</td><td class="num">0.105</td></tr>
-<tr><td>Leaf-high genes</td><td class="num">0.2659</td><td class="num">0.9993</td><td class="num">1.2651</td><td class="num">—</td></tr>
-<tr><td>Root-high genes</td><td class="num">1.4813</td><td class="num">0.0703</td><td class="num">1.5516</td><td class="num">—</td></tr>
-</tbody>
-</table>
-
-<p class="cap" style="margin-top:6px">The coefficients change systematically with GC and difference class, so the premise of a simple mixture fails; α and β are fitted coefficients only, not tissue proportions.</p>
-
-</div>
-<div class="fs12">
-
-### Main enrichments of the 728 whole-plant-enriched candidates
-
-<table class="appx tight wrap1">
-<thead><tr><th>Term</th><th>ID</th><th class="num">Candidates / background</th><th class="num">padj</th></tr></thead>
-<tbody>
-<tr><td>Phenylpropanoid biosynthesis</td><td>map00940</td><td class="num">16 / 61</td><td class="num">9.3e-4</td></tr>
-<tr><td>Glutathione metabolism</td><td>map00480</td><td class="num">13 / 49</td><td class="num">3.0e-3</td></tr>
-<tr><td>α-Linolenic acid metabolism</td><td>map00592</td><td class="num">9 / 28</td><td class="num">6.0e-3</td></tr>
-<tr><td>TCA cycle</td><td>map00020</td><td class="num">9 / 37</td><td class="num">4.4e-2</td></tr>
-<tr><td>Calcium / calmodulin-dependent kinase activity</td><td>GO:0004683</td><td class="num">9 / 25</td><td class="num">1.9e-3</td></tr>
-<tr><td>Pectinesterase activity / inhibitor activity</td><td>GO:0030599 / GO:0046910</td><td class="num">9 / 31 (each)</td><td class="num">4.4e-3 (each)</td></tr>
-<tr><td>Response to cadmium ion</td><td>GO:0046686</td><td class="num">30 / 181</td><td class="num">5.3e-4</td></tr>
-</tbody>
-</table>
-
-<p class="cap" style="margin-top:6px">Background: the 14,353 genes with valid statistics in both comparisons; another 669 genes are lower than both root and leaf, exploratory only.</p>
-
-### Known sampling facts and records to complete
-
-- **Known**: root and leaf were split from the same plants; the whole plant was sequenced without separating root from the rest, with no additional sampled region; root and leaf on LH01101 run 29, whole plant on LH00973 run 41; duplication 41.48–60.87% in whole plant and 70.71–79.25% in root and leaf.
-- **To complete**: PR–PL number correspondence, replicate independence, whether samples were pooled, collection batch, washing method, whether root samples carried bud primordia, RNA extraction and library batches, and RNA quality before library preparation (RIN etc.).
-
-</div>
-</div>
-
----
-layout: page
 class: lg
 kicker: Data sources
 ---
@@ -1379,7 +1320,7 @@ kicker: Data sources
 |---|---|
 | **Report** | Comprehensive Experimental Record Report of the *Podostemum ceratophyllum* Transcriptome (Podostemum_ceratophyllum_Integrated_Experimental_Record_20261026.docx; 2026-10-26, revised 2026-10-28). “Source” at the bottom of each slide gives the matching section and table numbers |
 | **Supplementary Data** | Supplementary Data to these slides (2026-10-29; sections S1–S15); the tag at the top right of each slide gives the matching section. Detailed values not listed in the Report (such as the re-verified shares of each major group and the identities of reassigned sequences) are given there with their sources |
-| **Figures** | fig05, 06, 07, 15, 16, 19, 20 and 21 of the display figure set of 2026-10-26 (figs/ of the slide source); per-library values in Report Table 92 and Appendix B, Tables 102–106 |
+| **Figures** | fig05, 06, 07, 16, 19 and 21 redrawn on 2026-10-29 with root and leaf only, from the data tables of the display figure set of 2026-10-26; fig22 (pie chart) from the same values as fig05; fig15 unchanged (figs/ of the slide source); per-library values in Report Table 92 and Appendix B, Tables 102–104 and 106 |
 | **Results records integrated in the Report** | Results records 4.2, 4.2dc, 4.3 (four updates), 4.4, 4.3–4.4dc2 and 4.4–4.5 (Report appendix, Table 101) |
 
 </div>

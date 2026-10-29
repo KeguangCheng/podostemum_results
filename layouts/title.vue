@@ -1,9 +1,8 @@
 <script setup lang="ts">
-// Cover: the nine libraries on the right (root and leaf split from the same plants; whole plant in another sequencing batch)
+// Cover: the six libraries compared on the right (root and leaf split from the same plants)
 const rows = [
   { k: 'r', name: 'Root', note: 'root part of the plant', libs: ['PR1', 'PR2', 'PR3'] },
   { k: 'l', name: 'Leaf', note: 'all parts remaining after root removal', libs: ['PL1', 'PL2', 'PL3'] },
-  { k: 'w', name: 'Whole plant', note: 'root and remaining parts together', libs: ['P1', 'P2', 'P3'] },
 ]
 </script>
 
@@ -11,17 +10,14 @@ const rows = [
   <div class="slidev-layout ttl">
     <div class="ttl-main">
       <div class="ttl-kicker">
-        <span class="triad"><i class="r" /><i class="l" /><i class="w" /></span>
+        <span class="triad"><i class="r" /><i class="l" /></span>
         PROGRESS REPORT
       </div>
       <slot />
     </div>
     <div class="ttl-side">
-      <div class="lib-title">NINE LIBRARIES</div>
+      <div class="lib-title">ROOT AND LEAF LIBRARIES</div>
       <template v-for="(row, i) in rows" :key="row.k">
-        <div v-if="i === 2" class="lib-split">
-          <span>different sequencing batch</span>
-        </div>
         <div class="lib-row">
           <div class="lib-name">
             <b>{{ row.name }}</b>
@@ -151,7 +147,6 @@ const rows = [
 
 .lib-tile.r { background: var(--root); }
 .lib-tile.l { background: var(--leaf); }
-.lib-tile.w { background: var(--whole); }
 
 .lib-pair {
   font-size: 12px;
@@ -161,20 +156,4 @@ const rows = [
   border-left: 2px solid var(--rule2);
 }
 
-.lib-split {
-  position: relative;
-  margin: 18px 0 14px;
-  border-top: 1.5px dashed var(--rule2);
-  height: 0;
-}
-
-.lib-split span {
-  position: absolute;
-  right: 0;
-  top: -9px;
-  background: #fff;
-  padding-left: 8px;
-  font-size: 12px;
-  color: var(--ink2);
-}
 </style>

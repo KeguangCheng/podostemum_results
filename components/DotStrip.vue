@@ -1,8 +1,8 @@
 <script setup lang="ts">
-// Log-scale dot strip: three rows per taxon (root / leaf / whole plant); dots are the three replicates, the tick is the mean
+// Log-scale dot strip: two rows per taxon (root / leaf); dots are the three replicates, the tick is the mean
 import { computed } from 'vue'
 
-interface Group { label: string, sub?: string, call?: string, r: number[], l: number[], w: number[] }
+interface Group { label: string, sub?: string, call?: string, r: number[], l: number[] }
 
 const props = withDefaults(defineProps<{
   groups: Group[]
@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<{
   width?: number
 }>(), { min: 1e-5, max: 0.2, width: 560 })
 
-const C = { r: '#d4893a', l: '#16958b', w: '#9b8eec' }
+const C = { r: '#d4893a', l: '#16958b' }
 const labelW = 196
 const callW = 0
 const rowH = 15
@@ -32,17 +32,16 @@ const ticks = computed(() => {
     out.push({ v: 10 ** e, s: e >= -3 ? String(10 ** e).replace(/^0\./, '0.') : `1e${e}` })
   return out
 })
-const gH = 3 * rowH + groupGap
+const gH = 2 * rowH + groupGap
 const height = computed(() => top + props.groups.length * gH + axisH - groupGap + 6)
 const mean = (a: number[]) => a.reduce((s, x) => s + x, 0) / a.length
-const tissues = ['r', 'l', 'w'] as const
+const tissues = ['r', 'l'] as const
 </script>
 
 <template>
   <div class="dstrip-legend">
     <span><i style="background:#d4893a" />Root</span>
     <span><i style="background:#16958b" />Leaf</span>
-    <span><i style="background:#9b8eec" />Whole plant</span>
     <span class="faint">dots: three replicates; tick: mean</span>
   </div>
   <svg :viewBox="`0 0 ${width} ${height}`" :width="width" :height="height" class="dstrip" role="img">
@@ -57,7 +56,7 @@ const tissues = ['r', 'l', 'w'] as const
       <g v-for="(t, ti) in tissues" :key="t" :transform="`translate(0, ${ti * rowH + rowH / 2})`">
         <line :x1="lx(mean(g[t]))" :x2="lx(mean(g[t]))" y1="-6" y2="6" :stroke="C[t]" stroke-width="3" stroke-linecap="round" />
         <circle v-for="(v, vi) in g[t]" :key="vi" :cx="lx(v)" cy="0" r="4.2" :fill="C[t]" stroke="#fff" stroke-width="1.5">
-          <title>{{ t === 'r' ? 'Root' : t === 'l' ? 'Leaf' : 'Whole plant' }} replicate {{ vi + 1 }}: {{ v }}%</title>
+          <title>{{ t === 'r' ? 'Root' : 'Leaf' }} replicate {{ vi + 1 }}: {{ v }}%</title>
         </circle>
       </g>
     </g>

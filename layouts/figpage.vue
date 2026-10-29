@@ -47,7 +47,7 @@ const L = computed(() => ({
       <span v-if="source" class="pg-src"><b>{{ L.source }}</b>{{ L.report }} {{ source }}</span>
       <span class="pg-mark">
         <span v-html="L.mark" />
-        <span class="triad"><i class="r" /><i class="l" /><i class="w" /></span>
+        <span class="triad"><i class="r" /><i class="l" /></span>
       </span>
     </div>
   </div>

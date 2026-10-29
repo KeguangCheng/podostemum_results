@@ -5,7 +5,7 @@
 @import '@fontsource/inter/400-italic.css';
 @import '@fontsource/inter/600-italic.css';
 
-/* Data colours match the figures: root amber, leaf teal, whole plant lavender; interface in a deeper purple */
+/* Data colours match the figures: root amber, leaf teal; interface in a deeper purple */
 :root {
   --ink: #1f1d2b;
   --ink2: #565169;
@@ -21,7 +21,6 @@
   --kicker: #6a5fbf;
   --root: #d4893a;
   --leaf: #16958b;
-  --whole: #9b8eec;
   --font: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -162,7 +161,6 @@
 
 .triad .r { background: var(--root); }
 .triad .l { background: var(--leaf); }
-.triad .w { background: var(--whole); }
 
 /* Key message */
 .core {
@@ -278,7 +276,6 @@
 
 .sw.r { background: var(--root); }
 .sw.l { background: var(--leaf); }
-.sw.w { background: var(--whole); }
 .sw.g { background: #c3bcdc; }
 .sw.a { background: var(--accent); }
 
@@ -693,3 +690,18 @@ img.wide {
 .core.sm { font-size: 13.5px !important; line-height: 1.45 !important; padding: 6px 14px 7px !important; margin-bottom: 10px !important; }
 .slidev-layout.pg table.appx.wrap1 td:first-child { white-space: normal; }
 .slidev-layout.pg.lg .nlist.sum .nitem { font-size: 14.8px; }
+
+/* Method line under each title (2026-10-29: the method of each step, briefly) */
+.method {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ink2);
+  margin: -7px 0 8px;
+}
+
+.method b {
+  color: var(--accent);
+  font-weight: 650;
+  margin-right: 6px;
+  letter-spacing: 0.02em;
+}
