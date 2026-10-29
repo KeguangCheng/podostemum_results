@@ -23,6 +23,16 @@ pnpm dev
 
 Open http://localhost:3030 in a browser; the presenter view (notes, next-slide preview, timer) is at http://localhost:3030/presenter/. Stop with Ctrl+C in the terminal.
 
+## Website
+
+Every push to `main` builds the slides with GitHub Actions (`.github/workflows/deploy.yml`) and publishes them with GitHub Pages at https://keguangcheng.com/podostemum_results/. The repository’s Pages source must be set to “GitHub Actions” (Settings → Pages → Build and deployment → Source). The workflow can also be started by hand from the Actions tab (Deploy pages → Run workflow).
+
+To check the site build locally:
+
+```bash
+pnpm exec slidev build --base /podostemum_results/
+```
+
 ## Exporting
 
 ```bash

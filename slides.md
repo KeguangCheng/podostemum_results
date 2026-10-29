@@ -10,6 +10,7 @@ fonts:
   provider: none
 drawings:
   persist: false
+preloadImages: false
 layout: title
 ---
 
