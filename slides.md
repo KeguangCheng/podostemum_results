@@ -1,7 +1,7 @@
 ---
 theme: default
 title: Progress Results of the Podostemum ceratophyllum Transcriptome Analysis
-info: Progress report, 29 October 2026. The source line at the bottom of each slide gives section and table numbers in the Comprehensive Experimental Record Report of the Podostemum ceratophyllum Transcriptome (2026-10-26, revised 2026-10-28); the tag at the top right gives the matching section of the Supplementary Data.
+info: Progress report, 29 October 2026. The source line at the bottom of each slide gives section and table numbers in the Comprehensive Experimental Record Report of the Podostemum ceratophyllum Transcriptome (2026-10-26, revised 2026-10-29); the tag at the top right gives the matching section of the Supplementary Data.
 colorSchema: light
 canvasWidth: 1280
 aspectRatio: 16/9
@@ -42,12 +42,12 @@ source: Table 1; 5.1, Table 99
 |---|---|---|
 | 1 | Remove associated-organism reads before assembly and build the formal reference transcriptome | Retention check of key markers and read-set sensitivity check completed |
 | 2 | Identify the sources of non-plant reads | Mainly animals, plus bacteria, fungi and several algal groups; high-fragment sequences re-verified one by one for the reportable rank |
-| 3 | Proteome-wide correspondence with *Arabidopsis* | Proteome-wide correspondence table; root–leaf expression differences |
+| 3 | Proteome-wide correspondence with *Arabidopsis*; nine-species family trees of the marker genes | Correspondence table; orthologues of 28 markers rechecked in nine species; root–leaf expression differences |
 | 4 | Targeted analyses of “unknown” sequences and the secondary cell wall | Estimated host share of “unknown” sequences; expression of preselected secondary-wall genes |
 
 </div>
 
-<p class="cap mt-4">S1–S15 at the top right refer to sections of the Supplementary Data; “Source” at the bottom gives section and table numbers in the Comprehensive Experimental Record Report (the Report); [numbers] are references, listed on slides 36–38.</p>
+<p class="cap mt-4">S1–S15 at the top right refer to sections of the Supplementary Data; “Source” at the bottom gives section and table numbers in the Comprehensive Experimental Record Report (the Report); [numbers] are references, listed on slides 38–40.</p>
 
 ---
 layout: page
@@ -413,7 +413,7 @@ source: 4.5.8, Tables 91, 93; Appendix B, Table 102
 
 ### Replicate stability
 
-- By the criteria on slide 24, Oscillatoriaceae and Sphaerotilaceae are tissue-associated (root-biased). Microcoleaceae and 10 other low-abundance bacterial families (including Staphylococcaceae, treated as a common contaminant; 10 without it) are exploratory only and all root-biased; Sphingomonadaceae and Paracoccaceae are unstable across root replicates.
+- By the criteria on slide 26, Oscillatoriaceae and Sphaerotilaceae are tissue-associated (root-biased). Microcoleaceae and 10 other low-abundance bacterial families (including Staphylococcaceae, treated as a common contaminant; 10 without it) are exploratory only and all root-biased; Sphingomonadaceae and Paracoccaceae are unstable across root replicates.
 
 </div>
 <div class="fs13">
@@ -702,42 +702,106 @@ layout: page
 class: lg
 kicker: Orthology · developmental markers
 supp: S8
-source: 4.3.5–4.3.6, Table 35
+source: 4.3.5–4.3.7, Tables 35, 35b
 ---
 
 # Key vegetative markers by level of homology evidence
 
-<p class="method"><b>Method</b>Pfam domain recall (HMMER 3.4) → MAFFT L-INS-i → IQ-TREE 2.4.0 (ModelFinder; 1,000 UFBoot and SH-aLRT) → species-overlap orthology; tblastn re-query for misses.</p>
+<p class="method"><b>Method</b>Pfam domain recall (HMMER 3.4) → MAFFT L-INS-i → IQ-TREE 2.4.0 (ModelFinder; 1,000 UFBoot and SH-aLRT) → species-overlap orthology in nine-species family trees; tblastn re-query for misses.</p>
 
-<div class="core">Key markers have been rechecked with gene trees [26, 27] and against the pre-screening assembly; a few relationships remain undecided.</div>
+<div class="core">In nine-species family trees [26, 27], 14 of the 24 vegetative targets have a high-confidence orthologue; AS1 and FIL are medium.</div>
 
-<p class="cap">Only the 24 vegetative development targets of <i>Arabidopsis</i> are counted, not floral organ markers; numbers in the table are <i>Arabidopsis</i> targets, not genes of <i>P. ceratophyllum</i>. Sequences and evidence for each target: slide 33 (Appendix B).</p>
+<p class="cap">Only the 24 vegetative development targets of <i>Arabidopsis</i> are counted, not floral organ markers; numbers in the table are <i>Arabidopsis</i> targets, not genes of <i>P. ceratophyllum</i>. Sequences and evidence for each target: slide 35 (Appendix B).</p>
 
 <table class="mx">
-<thead><tr><th>Module</th><th>High confidence <span class="faint">8</span></th><th>Medium confidence <span class="faint">7</span></th><th>Undecided <span class="faint">3</span></th><th>Not detected this time <span class="faint">4</span></th><th>TDIF-class motif evidence <span class="faint">2</span></th></tr></thead>
+<thead><tr><th>Module</th><th>High confidence <span class="faint">14</span></th><th>Medium confidence <span class="faint">2</span></th><th>Not detected this time <span class="faint">6</span></th><th>TDIF-class motif evidence <span class="faint">2</span></th></tr></thead>
 <tbody>
-<tr><td>Shoot apical meristem</td><td><span class="chip hi">WUS</span></td><td><span class="chip mid">STM</span><span class="chip mid">KNAT1</span><span class="chip mid">KNAT2</span><span class="chip mid">KNAT6</span></td><td></td><td><span class="chip nd">CLV3</span></td><td></td></tr>
-<tr><td>Leaf</td><td><span class="chip hi">AS1</span><span class="chip hi">YAB5</span><span class="chip hi">CUC3</span></td><td><span class="chip mid">YAB3</span><span class="chip mid">CUC2</span></td><td><span class="chip un">FIL</span></td><td><span class="chip nd">YAB2</span><span class="chip nd">CUC1</span></td><td></td></tr>
-<tr><td>Root</td><td><span class="chip hi">SHR</span><span class="chip hi">SCR</span></td><td></td><td><span class="chip un">PLT1</span><span class="chip un">PLT2</span></td><td><span class="chip nd">WOX5</span></td><td></td></tr>
-<tr><td>Vascular</td><td><span class="chip hi">WOX4</span><span class="chip hi">PXY</span></td><td><span class="chip mid">HB8</span></td><td></td><td></td><td><span class="chip td">CLE41</span><span class="chip td">CLE44</span></td></tr>
+<tr><td>Shoot apical meristem</td><td><span class="chip hi">WUS</span><span class="chip hi">STM</span><span class="chip hi">KNAT1</span><span class="chip hi">KNAT2</span><span class="chip hi">KNAT6</span></td><td></td><td><span class="chip nd">CLV3</span></td><td></td></tr>
+<tr><td>Leaf</td><td><span class="chip hi">YAB3</span><span class="chip hi">YAB5</span><span class="chip hi">CUC2</span><span class="chip hi">CUC3</span></td><td><span class="chip mid">AS1</span><span class="chip mid">FIL</span></td><td><span class="chip nd">YAB2</span><span class="chip nd">CUC1</span></td><td></td></tr>
+<tr><td>Root</td><td><span class="chip hi">SHR</span><span class="chip hi">SCR</span></td><td></td><td><span class="chip nd">WOX5</span><span class="chip nd">PLT1</span><span class="chip nd">PLT2</span></td><td></td></tr>
+<tr><td>Vascular</td><td><span class="chip hi">WOX4</span><span class="chip hi">PXY</span><span class="chip hi">HB8</span></td><td></td><td></td><td><span class="chip td">CLE41</span><span class="chip td">CLE44</span></td></tr>
 </tbody>
 </table>
 
 <div class="grid grid-cols-2 gap-x-10 mt-4">
 <div>
 
-- KNAT2/6 correspond to one sequence; the joint label is kept.
-- HB8 carries the ATHB-15/HB8 joint label in the formal-assembly tree.
+- KNAT2/6 correspond to one sequence, and so do FIL and YAB3 (FIL/YAB3 joint label).
+- HB8 now matches HB8 alone; the earlier ATHB-15/HB8 joint label is resolved.
 
 </div>
 <div>
 
-- YAB3 has one-sided support only (the seven-species tree of the pre-screening assembly), so it is at most medium.
-- CLE41/44 have only two TDIF-class candidates, which cannot be assigned individually.
+- AS1 falls to medium: its clade with <i>Cladopus</i> and <i>Hypericum</i> is stable, but the link to <i>Arabidopsis</i> AS1 has low support.
+- The two PLT candidates belong to the AIL6/AIL7 clade, so PLT1/2 are not detected; CLE41/44 have only two TDIF-class candidates.
 
 </div>
 </div>
 
+<!--
+Before the nine-species trees (2026-10-28): high 8, medium 7, undecided 3, not detected 4. The earlier levels combined the two-species dc2 tree with the seven-species tree of the pre-screening assembly (lower confidence taken). The nine-species trees judge directly on the dc2 sequences and include all seven species, so they replace both (Report 4.3.7).
+-->
+---
+layout: figpage
+kicker: Orthology · nine-species family trees
+source: 4.3.7, Tables 35a–35b
+side: right
+figw: 420px
+---
+
+# Nine-species family trees: orthologues of the marker genes
+
+<p class="method"><b>Method</b>Pfam family members (HMMER 3.4) from nine proteomes: the seven earlier species plus <i>Hypericum perforatum</i> (TSA ICRZ01, TransDecoder) and tomato (UniProt UP000004994) → 14 focused trees (MAFFT L-INS-i, IQ-TREE 2.4.0) → species-overlap orthology on 1,000 bootstrap trees.</p>
+
+<div class="core">For most markers the orthologue sequence is the same as before and only the confidence changes. Of 28 protein markers, 16 are now high, 3 medium and 9 not detected.</div>
+
+<div class="fs13">
+
+- **Up to high**: STM, KNAT1, KNAT2/6, CUC2, HB8 and PI from medium; YAB3 and AG from one-sided medium (AG: DN49098_c0_g1_i5 only).
+- **Down to medium**: AS1 (84% of bootstrap trees). CRC stays medium, now from a direct call.
+- **Undecided resolved**: FIL is medium under the FIL/YAB3 joint label; the candidates for PLT1/2 and AP3 sit in other subclades, so these are not detected.
+- *Cladopus* and *Hypericum* have orthologues of WOX5 and PLT1/2, which were not found in this transcriptome; not detected is not loss.
+- *Cladopus* has no sequence in the AG, B-class and SQUA groups.
+- *Hypericum* (Hypericaceae) is the sister family of Podostemaceae [50].
+
+</div>
+
+::fig::
+
+<img src="./figs/fig23_sp9_orthologs.png" />
+
+<!--
+Right, fig23_sp9_orthologs: for each of the 28 protein markers, the confidence of the P. ceratophyllum orthologue and the number of sequences called orthologues in each other species (data in fig23_sp9_orthologs_data.tsv; Report Table 35b). Amborella, sister to all other flowering plants, is not shown; its counts are in the data table. Hypericum sequences come from a seedling transcriptome, so missing orthologues there are not losses either.
+-->
+---
+layout: figpage
+kicker: Orthology · nine-species family trees
+source: 4.3.7, Table 35b
+side: right
+figw: 800px
+---
+
+# Nine-species trees: STM, CUC3 and PLT
+
+<p class="method"><b>Method</b>Clades cut from the rooted maximum-likelihood trees; duplication nodes by species overlap; UFBoot shown when ≥ 70.</p>
+
+<div class="core sm">Three lineages that clarify the earlier calls.</div>
+
+<div class="fs12">
+
+- **STM (A)**: DN11528 groups with two <i>Cladopus</i> sequences and one <i>Hypericum</i> sequence; it is the STM orthologue in 96% of bootstrap trees.
+- **CUC3 (B)**: DN402342 is the orthologue. DN4024 forms a Podostemaceae-only branch with two <i>Cladopus</i> sequences outside the CUC3 clade of the other species: possibly a fast-evolving Podostemaceae-specific copy, or an older duplication lost elsewhere.
+- **PLT (C, D)**: both candidates sit in the AIL6/AIL7 clade (also called PLT3/PLT7); the PLT1/2 clade has <i>Cladopus</i> and <i>Hypericum</i> sequences but none from <i>P. ceratophyllum</i>.
+
+</div>
+
+::fig::
+
+<img src="./figs/fig24_sp9_subtrees.png" />
+
+<!--
+Right, fig24_sp9_subtrees: clades cut from the KNOX1, CUC and PLT trees of script 38b (cladograms). All 14 trees are in sp9_trees_bundle_20261029/orthology/report/sp9_trees/ of the results package.
+-->
 ---
 layout: page
 class: lg
@@ -769,7 +833,7 @@ source: 4.4.2, Tables 37–38; 4.4.3, Tables 40–41
 
 - In the strict main analysis, 14,010 genes entered testing [28, 29]: 2,608 are higher in root and 2,461 higher in leaf, 5,069 in total.
 - The 5,069 genes differ significantly from zero with a fold-change point estimate of at least two; in the threshold test with H0 |log2FC| ≤ 1 and H1 |log2FC| > 1, 2,466 are significant. Both definitions are reported.
-- The current model is ~ tissue, without same-plant pairing. Once the number correspondence and the independent sampling units are confirmed, the test will follow the actual pairing, and the calls on slides 20–22 and 27–28 will be rechecked.
+- The current model is ~ tissue, without same-plant pairing. Once the number correspondence and the independent sampling units are confirmed, the test will follow the actual pairing, and the calls on slides 22–24 and 29–30 will be rechecked.
 
 </div>
 
@@ -826,7 +890,7 @@ class: t23
 
 # STM is higher in root; several developmental markers are expressed in both root and leaf
 
-<p class="method"><b>Method</b>Gene-level TPM (Salmon + tximport); strict DESeq2 root vs leaf test; orthology from focused gene trees.</p>
+<p class="method"><b>Method</b>Gene-level TPM (Salmon + tximport); strict DESeq2 root vs leaf test; orthology from nine-species family trees.</p>
 
 <div class="core sm">There are clear developmental candidate signals, but expression in bulk tissue cannot show cellular location.</div>
 
@@ -834,9 +898,9 @@ class: t23
 
 | Marker | Represents | Root TPM | Leaf TPM | Current result |
 |---|---|---:|---:|---|
-| **STM** | shoot meristem maintenance (KNOX) | 3.09 | 0.37 | <span class="dir r">Root-high</span>, padj 0.0021; homology medium |
-| **KNAT1** | class I KNOX | 21.86 | 19.77 | Not significant; homology medium |
-| **AS1** | represses KNOX in leaves (ARP) | 39.79 | 28.84 | Not significant; homology high |
+| **STM** | shoot meristem maintenance (KNOX) | 3.09 | 0.37 | <span class="dir r">Root-high</span>, padj 0.0021; homology high |
+| **KNAT1** | class I KNOX | 21.86 | 19.77 | Not significant; homology high |
+| **AS1** | represses KNOX in leaves (ARP) | 39.79 | 28.84 | Not significant; homology medium |
 | **SCR** | endodermis / bundle sheath (GRAS) | 23.87 | 44.78 | <span class="dir l">Leaf-high</span>; homology high |
 | **SHR** | endodermis differentiation (GRAS) | 1.20 | 1.23 | Not significant |
 | **WUS** | shoot stem cell maintenance | 0.40 | 0.60 | Low; the sequence covers only part of the protein |
@@ -847,7 +911,7 @@ class: t23
 
 - Higher STM in root bears on the research question of shoots arising from roots; where it is expressed cannot be judged from bulk material [25, 31].
 - In *Arabidopsis*, SCR also acts in bundle sheath development in leaves [17], so higher expression in leaf alone is not evidence of changed organ identity.
-- WOX5 not detected and PLT1/2 undecided do not mean that the genes are lost.
+- WOX5 and PLT1/2 not detected (the PLT candidates are AIL6/7-like) does not mean gene loss.
 - PXY and HB8 are not significant, WOX4 is very low, and the TDIF-class candidates are not in the strict test; no evidence yet of a coordinated change in the vascular module.
 
 </div>
@@ -1029,7 +1093,7 @@ source: 4.5.7, Table 90
 </div>
 
 - The rest lie in between. Calibration with simulated mixtures shows the EM point estimates are biased high (true 0.2 → estimated 0.26–0.30; true 0.5 → 0.57–0.62), so 42% is a model point estimate that may be too high, not a statistically validated upper bound.
-- **How the two estimates relate**: stratified genome alignment gives about 12% (10.7–16.1%, depending on the choice of false positive; slide 25); expression-profile EM gives 13% with ORF and 42% without, of which high-posterior (≥ 0.8) host-like fragments are 0% and 8%. The two methods rest on different bases and assumptions and cannot be merged into one shared result of 12%; model posteriors are not confirmed sources, and fragments in the middle of the distribution remain uncertain.
+- **How the two estimates relate**: stratified genome alignment gives about 12% (10.7–16.1%, depending on the choice of false positive; slide 27); expression-profile EM gives 13% with ORF and 42% without, of which high-posterior (≥ 0.8) host-like fragments are 0% and 8%. The two methods rest on different bases and assumptions and cannot be merged into one shared result of 12%; model posteriors are not confirmed sources, and fragments in the middle of the distribution remain uncertain.
 
 </div>
 <div class="fs13">
@@ -1070,7 +1134,7 @@ class: t23
 
 <p class="muted">The selected typical secondary-wall module shows no coordinated high expression so far; low TPM and the lack of clear counterparts alone cannot show whether the tissue deposits secondary walls. Whether higher leaf expression of monolignol genes also serves other phenylpropanoid products is a hypothesis to test.</p>
 
-- NAC master switches 0 / 5 comes from searching the correspondence and strict tables by list name. All annotations also contain a 245 bp SND1 (NAC012)-like fragment (about 4 TPM, PR1 only), so low expression is one possible reason; an SND3 (NAC010)-like gene, DN69967_c1_g1, is root-high (log2FC 2.97) but not in the correspondence table. Absence, low expression and many-to-many correspondence are not yet told apart; a NAC family tree is needed (slide 29).
+- NAC master switches 0 / 5 comes from searching the correspondence and strict tables by list name. All annotations also contain a 245 bp SND1 (NAC012)-like fragment (about 4 TPM, PR1 only), so low expression is one possible reason; an SND3 (NAC010)-like gene, DN69967_c1_g1, is root-high (log2FC 2.97) but not in the correspondence table. Absence, low expression and many-to-many correspondence are not yet told apart; a NAC family tree is needed (slide 31).
 - Basis of selection: sections 3.2 and 5.2 of the research proposal preselected pathways related to secondary-wall thickening (CesA, monolignol biosynthesis, NAC / MYB master switches). Only the expression of preselected genes is shown, to generate hypotheses; no co-expression network is computed and no regulatory relationship is inferred.
 
 </div>
@@ -1118,10 +1182,10 @@ layout: page
 class: lg
 kicker: Open items
 supp: S14
-source: 4.1.2, Table 3; 4.3.3, Table 29; 4.3.5–4.3.6, Tables 32, 35; 4.4.8; 4.4.11; 4.5.7, Table 90; 5.1
+source: 4.1.2, Table 3; 4.3.3, Table 29; 4.3.5–4.3.7, Tables 32, 35, 35b; 4.4.8; 4.4.11; 4.5.7, Table 90; 5.1
 ---
 
-# Open items: paired test, family trees and a few homology relationships
+# Open items: paired test and a few homology relationships
 
 <div class="core">The remaining questions involve targeted computation and existing records, and some are limited by the data design.</div>
 
@@ -1130,10 +1194,9 @@ source: 4.1.2, Table 3; 4.3.3, Table 29; 4.3.5–4.3.6, Tables 32, 35; 4.4.8; 4.
 | Question | Next computation or check | Effect on current conclusions |
 |---|---|---|
 | **Root–leaf pairing and independence** | Confirm the actual correspondence of PR1–3 and PL1–3 and whether they come from three independent plants; then update the model with the actual pairing | Recheck DE gene counts, enrichment, marker expression, secondary-wall calls and extended candidates; recheck the permutation design |
-| **Nine-species family trees** | Trees for the 14 marker groups with the seven species plus *Hypericum perforatum* (Hypericaceae, sister family of Podostemaceae) and tomato, e.g. STM with KNAT1/2/6 as the KNOX family | Places *P. ceratophyllum* sequences next to orthologues of the closest sampled relative; shows whether a duplication predates or follows the split from Hypericaceae |
 | **Correspondence of a few extended candidates** | Family trees, ORFs, domains, coverage and eggNOG conflicts for SAUR55 and others | Decides whether specific gene names and functional interpretations can be used |
-| **Homology resolution of key markers** | FIL and PLT1/2 undecided; YAB3 with one-sided support; KNAT2/6 and HB8 with joint labels | Add evidence only for relationships that affect key interpretations |
-| **NAC master switches of the secondary wall** | NAC family tree to confirm whether *P. ceratophyllum* has members of the NST / SND / VND clades | Decides whether “no counterpart found” on slide 27 can be written as “not detected” |
+| **Remaining homology questions** | AS1 and FIL medium; CUC3-like DN4024 in a Podostemaceae-only branch; two AG entries (DN49098_c0_g2, DN274229) outside the nine-species AG group | Add evidence only for relationships that affect key interpretations |
+| **NAC master switches of the secondary wall** | NAC family tree to confirm whether *P. ceratophyllum* has members of the NST / SND / VND clades | Decides whether “no counterpart found” on slide 29 can be written as “not detected” |
 | **The largest unknown sequence** | Strand and Poly(A) site of DN26425, and alignment to Simuliidae genomes | Alone it is 1.9% of retained reads in leaf and needs a separate explanation |
 
 </div>
@@ -1153,8 +1216,8 @@ source: 5.1, Table 99
 
 <div class="nlist sum" style="display:block; columns: 2; column-gap: 22px">
 <div class="nitem mb-3" style="break-inside: avoid">The screened reference transcriptome and the main root–leaf expression differences are stable under read-set checks; rechecking the model after the pairing numbers and independence are confirmed is still to be done.</div>
-<div class="nitem mb-3" style="break-inside: avoid">Non-plant reads are mainly animal (Simuliidae in leaf, Chironomidae in root); bacteria, fungi and algae all have source evidence. Most families and genera that meet the association criterion are root-biased, but most re-verified fragments support only broad groups, and the taxa reportable to family or genus all carry very low fragment shares (slide 23). After all non-plant genes were scanned for host isoforms, 5 mixed gene clusters contain host isoforms meeting the rule (two “bacteria”, the midge 28S cluster, a “red alga” cluster and one trace sequence), and the matching host fragments have been deducted; stability calls for bacterial, fungal and algal families are not affected.</div>
-<div class="nitem mb-3" style="break-inside: avoid">Broad gene correspondence with <i>Arabidopsis</i> has been established; agreement in direction is stronger on the leaf side, and a few developmental candidates and opposite-direction candidates merit focused interpretation.</div>
+<div class="nitem mb-3" style="break-inside: avoid">Non-plant reads are mainly animal (Simuliidae in leaf, Chironomidae in root); bacteria, fungi and algae all have source evidence. Most families and genera that meet the association criterion are root-biased, but most re-verified fragments support only broad groups, and the taxa reportable to family or genus all carry very low fragment shares (slide 25). After all non-plant genes were scanned for host isoforms, 5 mixed gene clusters contain host isoforms meeting the rule (two “bacteria”, the midge 28S cluster, a “red alga” cluster and one trace sequence), and the matching host fragments have been deducted; stability calls for bacterial, fungal and algal families are not affected.</div>
+<div class="nitem mb-3" style="break-inside: avoid">In nine-species family trees, 16 of 28 protein markers have a high-confidence orthologue and 3 a medium one; orthologues of WOX5 and PLT1/2, present in <i>Cladopus</i> and <i>Hypericum</i>, were not found in this transcriptome. Broad gene correspondence with <i>Arabidopsis</i> has been established; agreement in direction is stronger on the leaf side, and a few developmental candidates and opposite-direction candidates merit focused interpretation.</div>
 <div class="nitem mb-3" style="break-inside: avoid">The “unknown” analysis set is about 7.9–9.4% of retained reads. Stratified genome alignment estimates the host at about 12% (10.7–16.1%), all from the 600–1,500 bp stratum with ORF, and 0 with a fragment-weighted false positive. The expression profile is a different basis, its results differ with and without ORF and include many uncertain fragments; the two methods are not validation with independent samples.</div>
 <div class="nitem mb-3" style="break-inside: avoid">Preselected secondary-wall genes: the upstream monolignol pathway is higher in the non-root part, secondary-wall CESAs are low, and no counterparts of the NAC master switches were found; description and hypothesis only.</div>
 </div>
@@ -1171,6 +1234,7 @@ supp: S14
 <div class="nitem">Which bacterial, fungal and algal sequences, competing hits and reference databases to prioritize, and which specific family or genus candidates still need fuller computational taxonomic evidence.</div>
 <div class="nitem">Which extended candidates need family-tree confirmation before entering the main results.</div>
 <div class="nitem">Whether the secondary-wall expression pattern can support the hypothesis in the proposal, or should stay descriptive.</div>
+<div class="nitem">Whether to follow up the CUC3-like copy DN4024, which groups only with <i>Cladopus</i> sequences, and the PLT1/2 and WOX5 orthologues not found in this transcriptome.</div>
 </div>
 
 ---
@@ -1214,65 +1278,64 @@ source: 4.2.5, Table 14; 4.2.7, Tables 17–18; 4.2.10, Table 23; 4.4.1–4.4.2,
 layout: page
 kicker: Appendix B · Homology evidence for 24 vegetative targets
 supp: S8
-source: 4.3.6, Table 35
+source: 4.3.6–4.3.7, Tables 35, 35b
 ---
 
 # Appendix B&nbsp;&nbsp;Homology evidence for the 24 vegetative development targets
 
-<p class="cap">dc2 IDs omit the prefix TRINITY_; R_TN_ marks sequences added back by tblastn re-query. “Support”: conservative bootstrap support in the dc2 focused tree; “norm”: call in the seven-species focused tree of the pre-screening assembly; “Not detected”: not detected this time.</p>
+<p class="cap">dc2 IDs omit the prefix TRINITY_; R_TN_ marks sequences added back by tblastn re-query. “Nine sp.”: share of 1,000 bootstrap trees in which the sequence is called the orthologue in the nine-species family tree; levels follow these trees. “norm”: call for the pre-screening assembly in the seven-species focused trees. “Not detected”: not detected this time.</p>
 
 <div class="grid grid-cols-[1.12fr_1fr] gap-6">
 <div>
 <table class="appx tight fs115">
-<colgroup><col style="width:15%"><col style="width:23%"><col style="width:12%"><col style="width:18%"><col style="width:32%"></colgroup>
-<thead><tr><th>Marker</th><th>dc2 sequence</th><th class="num">Support</th><th>Adopted</th><th>Basis and limits</th></tr></thead>
+<colgroup><col style="width:15%"><col style="width:24%"><col style="width:11%"><col style="width:17%"><col style="width:33%"></colgroup>
+<thead><tr><th>Marker</th><th>dc2 sequence</th><th class="num">Nine sp.</th><th>Adopted</th><th>Basis and limits</th></tr></thead>
 <tbody>
 <tr class="grp"><td colspan="5">Shoot apical meristem</td></tr>
-<tr><td>STM</td><td>DN11528_c0_g1_i3</td><td class="num">94%</td><td>Medium</td><td>norm 82%; both medium</td></tr>
-<tr><td>KNAT1</td><td>DN69988_c0_g1_i1</td><td class="num">98%</td><td>Medium</td><td>norm 94%; lower confidence taken</td></tr>
-<tr><td>KNAT2/6</td><td>DN90238_c0_g1_i1</td><td class="num">92% / 91%</td><td>Medium, joint label</td><td>norm 100%; one sequence, counted once</td></tr>
-<tr><td>WUS</td><td>DN125409_c0_g1_i1</td><td class="num">97%</td><td>High</td><td>only ~25% of protein, around homeobox</td></tr>
+<tr><td>STM</td><td>DN11528_c0_g1_i3</td><td class="num">96%</td><td>High</td><td>earlier medium (dc2 94%, norm 82%)</td></tr>
+<tr><td>KNAT1</td><td>DN69988_c0_g1_i1</td><td class="num">95%</td><td>High</td><td>earlier medium (norm 94%)</td></tr>
+<tr><td>KNAT2/6</td><td>DN90238_c0_g1_i1</td><td class="num">100%</td><td>High, joint label</td><td>one sequence, counted once</td></tr>
+<tr><td>WUS</td><td>DN125409_c0_g1_i1</td><td class="num">100%</td><td>High</td><td>only ~25% of protein, around homeobox</td></tr>
 <tr><td>CLV3</td><td>—</td><td class="num">—</td><td>Not detected</td><td>CLE method recall 75% in <i>Arabidopsis</i></td></tr>
 <tr class="grp"><td colspan="5">Leaf</td></tr>
-<tr><td>AS1</td><td>DN70555_c0_g1_i1</td><td class="num">100%</td><td>High</td><td>both agree</td></tr>
-<tr><td>YAB3 / FIL</td><td>DN180872_c0_g1_i4</td><td class="num">51% / 68%</td><td>YAB3 medium; FIL undecided</td><td>YAB3 one-sided support (norm 85%); one sequence, counted once</td></tr>
-<tr><td>FIL/YAB3-like</td><td>DN89249_c0_g1_i3</td><td class="num">48% / 60%</td><td>Undecided</td><td>used for neither</td></tr>
-<tr><td>YAB5</td><td>DN1141_c0_g1_i1</td><td class="num">99%</td><td>High</td><td>norm 95%</td></tr>
+<tr><td>AS1</td><td>DN70555_c0_g1_i1</td><td class="num">84%</td><td>Medium</td><td>clade with <i>Cladopus</i>, <i>Hypericum</i> stable; link to AS1 weak</td></tr>
+<tr><td>YAB3 / FIL</td><td>DN180872_c0_g1_i4</td><td class="num">97% / &lt;95%</td><td>YAB3 high; FIL medium</td><td>FIL/YAB3 joint label; one sequence, counted once</td></tr>
+<tr><td>FIL/YAB3-like</td><td>DN89249_c0_g1_i3</td><td class="num">—</td><td>Not used</td><td>corresponds to no marker</td></tr>
+<tr><td>YAB5</td><td>DN1141_c0_g1_i1</td><td class="num">96%</td><td>High</td><td>high before as well</td></tr>
 <tr><td>YAB2</td><td>—</td><td class="num">nearest 0%</td><td>Not detected</td><td>beyond a duplication node</td></tr>
-<tr><td>CUC1</td><td>—</td><td class="num">nearest 8%</td><td>Not detected</td><td>DN313831 is the CUC2 candidate</td></tr>
-<tr><td>CUC2</td><td>DN313831_c0_g1_i2</td><td class="num">92%</td><td>Medium</td><td>norm 90%</td></tr>
-<tr><td>CUC3 (a) / (b)</td><td>DN4024_c0_g1_i1; DN402342_c0_g1_i1</td><td class="num">97% / 100%</td><td>High, 2 sequences</td><td>possibly two genes, listed separately</td></tr>
+<tr><td>CUC1</td><td>—</td><td class="num">nearest 0%</td><td>Not detected</td><td>no orthologue in the other eight species</td></tr>
+<tr><td>CUC2</td><td>DN313831_c0_g1_i2</td><td class="num">96%</td><td>High</td><td>earlier medium (norm 90%)</td></tr>
+<tr><td>CUC3</td><td>DN402342_c0_g1_i1</td><td class="num">100%</td><td>High</td><td>DN4024 now CUC3-like (Podostemaceae-only branch)</td></tr>
 </tbody>
 </table>
 </div>
 <div>
 <table class="appx tight fs115">
-<colgroup><col style="width:15%"><col style="width:23%"><col style="width:12%"><col style="width:18%"><col style="width:32%"></colgroup>
-<thead><tr><th>Marker</th><th>dc2 sequence</th><th class="num">Support</th><th>Adopted</th><th>Basis and limits</th></tr></thead>
+<colgroup><col style="width:15%"><col style="width:24%"><col style="width:11%"><col style="width:17%"><col style="width:33%"></colgroup>
+<thead><tr><th>Marker</th><th>dc2 sequence</th><th class="num">Nine sp.</th><th>Adopted</th><th>Basis and limits</th></tr></thead>
 <tbody>
 <tr class="grp"><td colspan="5">Root</td></tr>
-<tr><td>SHR</td><td>DN302812_c0_g1_i1</td><td class="num">100%</td><td>High</td><td>both agree</td></tr>
-<tr><td>SCR</td><td>DN361067_c0_g1_i1</td><td class="num">100%</td><td>High</td><td>both agree</td></tr>
-<tr><td>WOX5</td><td>—</td><td class="num">nearest 1%</td><td>Not detected</td><td>no protein-level reads</td></tr>
-<tr><td>PLT1/2</td><td>candidates DN9331_c0_g1_i1, R_TN_DN10568_c0_g1_i4</td><td class="num">0%</td><td>Undecided</td><td>other AIL in norm; listed as AIL-like</td></tr>
+<tr><td>SHR</td><td>DN302812_c0_g1_i1</td><td class="num">100%</td><td>High</td><td>high before as well</td></tr>
+<tr><td>SCR</td><td>DN361067_c0_g1_i1</td><td class="num">100%</td><td>High</td><td>high before as well</td></tr>
+<tr><td>WOX5</td><td>—</td><td class="num">nearest 0%</td><td>Not detected</td><td>orthologues in <i>Cladopus</i> (2), <i>Hypericum</i> (1)</td></tr>
+<tr><td>PLT1/2</td><td>— (candidates DN9331_c0_g1_i1, R_TN_DN10568_c0_g1_i4)</td><td class="num">0%</td><td>Not detected</td><td>candidates in the AIL6/AIL7 clade; listed as AIL6/7-like</td></tr>
 <tr class="grp"><td colspan="5">Vascular</td></tr>
 <tr><td>CLE41/44</td><td>DN121057_c0_g1_i1, DN419884_c0_g1_i1</td><td class="num">—</td><td>TDIF-class motif candidates</td><td>CLE41 / 44 not separable</td></tr>
-<tr><td>PXY</td><td>DN60_c1_g1_i1</td><td class="num">100%</td><td>High</td><td>norm 99%</td></tr>
-<tr><td>WOX4</td><td>DN127383_c0_g1_i1</td><td class="num">100%</td><td>High</td><td>norm 99%</td></tr>
-<tr><td>HB8</td><td>R_TN_DN1042_c0_g1_i80</td><td class="num">90%</td><td>Medium</td><td>dc2 joint ATHB-15/HB8; norm 100%</td></tr>
+<tr><td>PXY</td><td>DN60_c1_g1_i1</td><td class="num">100%</td><td>High</td><td>high before as well</td></tr>
+<tr><td>WOX4</td><td>DN127383_c0_g1_i1</td><td class="num">100%</td><td>High</td><td>high before as well</td></tr>
+<tr><td>HB8</td><td>R_TN_DN1042_c0_g1_i80</td><td class="num">100%</td><td>High</td><td>earlier ATHB-15/HB8 joint label resolved</td></tr>
 </tbody>
 </table>
 
 <div class="fs12 mt-3">
 
-- By <i>Arabidopsis</i> target: high 8, medium 7, undecided 3, not detected this time 4, TDIF-class motif candidates 2; KNAT2/6 are 2 targets and 1 sequence, CUC3 is 1 target and 2 sequences.
-- “High” is limited by sampling only two species: within-family duplication, differential loss and unsampled paralogs cannot be excluded; for WUS it applies only to the fragment.
+- By <i>Arabidopsis</i> target: high 14, medium 2, not detected this time 6, TDIF-class motif candidates 2; KNAT2/6 are 2 targets and 1 sequence, as are FIL and YAB3.
+- “High” rests on nine species including the sister family Hypericaceae; duplications within unsampled Podostemaceae cannot be excluded; for WUS it applies only to the fragment.
 - The CLE motif method recovers 75% of the 32 <i>Arabidopsis</i> precursors overall, not a detection rate for CLV3; not detected is not evolutionary loss.
 
 </div>
 </div>
 </div>
-
 ---
 layout: page
 kicker: Appendix C · Sequence-level evidence for associated sources
@@ -1318,9 +1381,9 @@ kicker: Data sources
 
 | Material | Description |
 |---|---|
-| **Report** | Comprehensive Experimental Record Report of the *Podostemum ceratophyllum* Transcriptome (Podostemum_ceratophyllum_Integrated_Experimental_Record_20261026.docx; 2026-10-26, revised 2026-10-28). “Source” at the bottom of each slide gives the matching section and table numbers |
+| **Report** | Comprehensive Experimental Record Report of the *Podostemum ceratophyllum* Transcriptome (Podostemum_ceratophyllum_Integrated_Experimental_Record_20261026.docx; 2026-10-26, revised 2026-10-29). “Source” at the bottom of each slide gives the matching section and table numbers |
 | **Supplementary Data** | Supplementary Data to these slides (2026-10-29; sections S1–S15); the tag at the top right of each slide gives the matching section. Detailed values not listed in the Report (such as the re-verified shares of each major group and the identities of reassigned sequences) are given there with their sources |
-| **Figures** | fig05, 06, 07, 16, 19 and 21 redrawn on 2026-10-29 with root and leaf only, from the data tables of the display figure set of 2026-10-26; fig22 (pie chart) from the same values as fig05; fig15 unchanged (figs/ of the slide source); per-library values in Report Table 92 and Appendix B, Tables 102–104 and 106 |
+| **Figures** | fig05, 06, 07, 16, 19 and 21 redrawn on 2026-10-29 with root and leaf only, from the data tables of the display figure set of 2026-10-26; fig22 (pie chart) from the same values as fig05; fig15 unchanged (figs/ of the slide source); fig23 and fig24 drawn on 2026-10-29 from the nine-species family trees (Report 4.3.7); per-library values in Report Table 92 and Appendix B, Tables 102–104 and 106 |
 | **Results records integrated in the Report** | Results records 4.2, 4.2dc, 4.3 (four updates), 4.4, 4.3–4.4dc2 and 4.4–4.5 (Report appendix, Table 101) |
 
 </div>
@@ -1386,7 +1449,7 @@ layout: page
 kicker: References
 ---
 
-# References (33–49)
+# References (33–50)
 
 <div class="refs">
 
@@ -1407,5 +1470,6 @@ kicker: References
 47. Camacho, C., Coulouris, G., Avagyan, V., Ma, N., Papadopoulos, J., Bealer, K. & Madden, T. L. (2009) BLAST+: architecture and applications. BMC Bioinformatics 10: 421. https://doi.org/10.1186/1471-2105-10-421
 48. Schoch, C. L., Ciufo, S., Domrachev, M. et al. (2020) NCBI Taxonomy: a comprehensive update on curation, resources and tools. Database 2020: baaa062. https://doi.org/10.1093/database/baaa062
 49. Vanholme, R., Cesarino, I., Rataj, K. et al. (2013) Caffeoyl shikimate esterase (CSE) is an enzyme in the lignin biosynthetic pathway in *Arabidopsis*. Science 341(6150): 1103–1106. https://doi.org/10.1126/science.1241602
+50. Ruhfel, B. R., Larson, D. A., Koenig, N., Rutishauser, R., Bove, C. P. & Philbrick, C. T. (2024) Plastid phylogenomic analysis of Podostemaceae with an emphasis on Neotropical Podostemoideae. Systematic Botany 49(3): 580–616. https://doi.org/10.1600/036364424X17267811220470
 
 </div>
